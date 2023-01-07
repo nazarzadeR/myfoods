@@ -16,6 +16,7 @@ const index = (): JSX.Element => {
     return (
         <Flex
             px="5"
+            my={[1, 1, 0 , 0]}
             w="full"
             h="full"
             position="relative"
@@ -26,7 +27,7 @@ const index = (): JSX.Element => {
                 drag
                 as={motion.h1}
                 cursor="pointer"
-                size={["xl", "2xl", "lg"]}
+                size={["2xl", "2xl", "lg"]}
                 onClick={() => navigate("/", { replace: true })}
             >
                 MyFoods

@@ -12,7 +12,7 @@ const SubmitButton: React.FC<Props> = (props) => {
     return (
         <Box
             p="2px"
-            h="40px"
+            h="50px"
             w="80px"
             zIndex="2000"
             ml="-50px !important"

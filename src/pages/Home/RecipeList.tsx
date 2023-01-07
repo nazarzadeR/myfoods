@@ -13,7 +13,7 @@ const RecipeList = () => {
 
     if (!hasRecipe()) return <Loader />;
 
-    const { from, to } = pagCord();
+    const { from, to } = pagCord(recipes);
     const pagination = recipes.slice(from, to);
 
     return (

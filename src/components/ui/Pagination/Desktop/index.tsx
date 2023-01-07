@@ -3,15 +3,17 @@ import { nanoid } from "nanoid";
 import { HStack } from "@chakra-ui/react";
 
 import Button from "./PagButton";
+import useRecipe from "stores/recipe";
 import useSetting from "stores/settings";
 import { pag, isNum } from "util/paginationShorter";
 import { Forward, Backward } from "components/svgs";
 
 const Pagination = () => {
+    const { recipes } = useRecipe();
     const { isNext, isPrev, pageInfo, pagNext, pagPrev, pagTo } = useSetting();
-    const { now, maxPage } = pageInfo();
+    const { now, maxPage } = pageInfo(recipes);
 
-    if (!isNext() && !isPrev()) return null;
+    if (!isNext(recipes) && !isPrev()) return null;
 
     const handlePag = (num: string | number) => {
         return () => {
@@ -20,6 +22,7 @@ const Pagination = () => {
             pagTo(num as number);
         };
     };
+
 
     return (
         <HStack>
@@ -35,7 +38,7 @@ const Pagination = () => {
                     {num}
                 </Button>
             ))}
-            <Button disabled={!isNext()} onClick={() => pagNext()}>
+            <Button disabled={!isNext(recipes)} onClick={() => pagNext(recipes)}>
                 <Forward />
             </Button>
         </HStack>

@@ -1,6 +1,5 @@
+import { IRecipe } from "interface";
 import create from "zustand";
-
-import useRecipes from "./recipe";
 
 type State = {
     pag: number;
@@ -9,14 +8,14 @@ type State = {
 };
 
 type Actions = {
-    pagNext: () => void;
     pagPrev: () => void;
-    isNext: () => boolean;
     isPrev: () => boolean;
     pagTo: (num: number) => void;
-    pagCord: () => { from: number; to: number };
-    pageInfo: () => { now: number; maxPage: number };
+    pagNext: (recipes: IRecipe[]) => void;
+    isNext: (recipes: IRecipe[]) => boolean;
     setPagMode: (mode: "PAG" | "INFINITY") => void;
+    pagCord: (recipes: IRecipe[]) => { from: number; to: number };
+    pageInfo: (recipes: IRecipe[]) => { now: number; maxPage: number };
 };
 
 type SettingStore = State & Actions;
@@ -42,35 +41,41 @@ const useSetting = create<SettingStore>((set, get) => ({
     device: detectDevice(),
     pagMode: detectDevice() === "MOBILE" ? "INFINITY" : "PAG",
     setPagMode: (mode) => set(() => ({ pagMode: mode })),
-    pagCord: () => {
+    pagCord: (recipes) => {
         const { pag, pagMode } = get();
-        const { recipes } = useRecipes.getState();
         const from = pagMode === "INFINITY" ? 0 : pag;
         const to = recipes.length <= pag + 6 ? recipes.length : pag + 6;
         return { from, to };
     },
-    pagNext: () => {
+    pagNext: (recipes) => {
         const { pag, isNext } = get();
-        const { recipes } = useRecipes.getState();
 
-        if (!isNext()) return;
+        if (!isNext(recipes)) return;
 
         const to = recipes.length <= pag + 6 ? recipes.length : pag + 6;
         set(() => ({ pag: to }));
     },
     pagPrev: () => {
         const { pag, isPrev } = get();
+        const to = pag - 6 > 0 ? pag - 6 : 0;
 
         if (!isPrev()) return;
 
-        const to = pag - 6 > 0 ? pag - 6 : 0;
-
         set(() => ({ pag: to }));
     },
-    isNext: () => {
+    pageInfo: (recipes) => {
         const { pag } = get();
-        const { recipes } = useRecipes.getState();
 
+        return {
+            now: (pag + 6) / 6,
+            maxPage: Math.floor(recipes.length / 6),
+        };
+    },
+    pagTo: (num) => {
+        set(() => ({ pag: (num - 1) * 6 }));
+    },
+    isNext: (recipes) => {
+        const { pag } = get();
         return recipes.length > pag + 6;
     },
     isPrev: () => {
@@ -78,18 +83,6 @@ const useSetting = create<SettingStore>((set, get) => ({
 
         return pag > 0;
     },
-    pageInfo: () => {
-        const { pag } = get();
-        const { recipes } = useRecipes.getState();
-
-        return {
-            now: (pag + 6) / 6,
-            maxPage: Math.floor(recipes.length / 6),
-        };
-    },
-    pagTo: num => {
-        set(() => ({ pag: (num - 1) * 6 }));
-    }
 }));
 
 export default useSetting;

@@ -23,12 +23,27 @@ const Main: React.FC<Props> = (props) => {
             overflowY="scroll"
             bg="chakra-body-bg"
             transformOrigin="top left"
-            transition="0.5s linear"
+            animate={open ? "open" : "close"}
             templateRows="80px calc(100% - 80px)"
-            pointerEvents={open ? "none" : "all"}
+            variants={{
+                open: {
+                    rotate: "-35deg",
+                    pointerEvents: "none",
+                    transition: {
+                        duration: 0.7,
+                        ease: [1, 0.005, 0.24, 1],
+                    },
+                },
+                close: {
+                    rotate: "0deg",
+                    pointerEvents: "all",
+                    transition: {
+                        duration: 0.7,
+                        ease: [1, 0.005, 0.24, 1],
+                    },
+                },
+            }}
             sx={{
-                transform: open ? "rotate(-35deg)" : "rotate(0)",
-                transition: "transform .7s cubic-bezier(1,.005,.24,1)",
                 "::-webkit-scrollbar": {
                     display: "none",
                 },

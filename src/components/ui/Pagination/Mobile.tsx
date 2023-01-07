@@ -2,16 +2,18 @@ import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import { Box, Center, Flex } from "@chakra-ui/react";
 
-import useSingleIntersection from "hook/useSingleIntersection";
+import useRecipe from "stores/recipe";
 import useSetting from "stores/settings";
+import useSingleIntersection from "hook/useSingleIntersection";
 
 const Mobile = () => {
     const ref = useRef<any>(null);
-    const { isNext, pagNext } = useSetting();
+    const { recipes } = useRecipe();
+    const { pagNext, isNext } = useSetting();
     const observer = useSingleIntersection(ref, () => {
-        if (isNext()) {
+        if (isNext(recipes)) {
             const timer = setTimeout(() => {
-                pagNext();
+                pagNext(recipes);
                 clearTimeout(timer);
             }, 1500);
         }
@@ -19,7 +21,7 @@ const Mobile = () => {
 
     return (
         <Center w="full" h="60px">
-            {isNext() ? (
+            {isNext(recipes) ? (
                 <Box ref={ref} w="80px" h="50px" position="relative">
                     <Box
                         w="16px"

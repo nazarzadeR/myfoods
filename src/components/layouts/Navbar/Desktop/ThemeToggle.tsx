@@ -50,7 +50,7 @@ const ThemeToggle: React.FC<Props> = (props) => {
     };
 
     return (
-        <Center h="full" onClick={handleClick} cursor="pointer" {...props}>
+        <Center h="full" onClick={handleClick}  cursor="pointer" {...props}>
             <Icon
                 id="toggle"
                 fill="current"

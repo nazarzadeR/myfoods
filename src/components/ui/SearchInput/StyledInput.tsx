@@ -24,7 +24,7 @@ const Input: React.FC<Props> = (props) => {
     return (
         <Box
             p="3px"
-            h="50px"
+            h="60px"
             w="15rem"
             borderRadius="lg"
             bgGradient="linear-gradient(to right,#fdde5c,#f8ab5e,#f56a62,#a176c8,#759beb,#65beb3,#70db96)"

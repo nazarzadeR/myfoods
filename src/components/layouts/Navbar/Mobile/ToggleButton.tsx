@@ -3,6 +3,7 @@ import { Box, useBoolean, Hide } from "@chakra-ui/react";
 
 import useEvent from "hook/useEvent";
 import { Hamburger, Close } from "components/svgs";
+import { motion } from "framer-motion";
 
 const defaultSx = {
     position: "absolute",
@@ -13,18 +14,17 @@ const defaultSx = {
     fontSize: "1.5rem",
     color: "whitesmoke",
     transformOrigin: "-100px -100px",
-    transition: `transform .7s cubic-bezier(1,.005,.24,1)`,
 };
 
 const ToggleButton = () => {
-    const [isOpen, { toggle, off }] = useBoolean();
+    const [open, { toggle, off }] = useBoolean();
     const emitter = useEvent("shazam", ({ detail: { isOpen } }) => {
         if (!isOpen) off();
     });
 
     useEffect(() => {
-        emitter.emit({ isOpen });
-    }, [isOpen]);
+        emitter.emit({ isOpen: open });
+    }, [open]);
 
     return (
         <Hide above="md">
@@ -34,25 +34,48 @@ const ToggleButton = () => {
                 h="80px"
                 w="80px"
                 as="span"
-                zIndex={1100}
                 bg="bgDark"
+                zIndex={1100}
                 cursor="pointer"
                 onClick={toggle}
                 position="absolute"
                 borderBottomRightRadius="100%"
             >
-                <Hamburger
-                    sx={{
-                        ...defaultSx,
-                        transform: isOpen ? "rotate(-30deg)" : "rotate(0deg)",
+                <Box
+                    w="full"
+                    h="full"
+                    as={motion.div}
+                    transformOrigin="top left"
+                    animate={open ? "open" : "close"}
+                    variants={{
+                        open: {
+                            rotate: -60,
+                            transition: {
+                                duration: 0.7,
+                                ease: [1, 0.005, 0.24, 1],
+                            },
+                        },
+                        close: {
+                            rotate: 0,
+                            transition: {
+                                duration: 0.7,
+                                ease: [1, 0.005, 0.24, 1],
+                            },
+                        },
                     }}
-                />
-                <Close
-                    sx={{
-                        ...defaultSx,
-                        transform: isOpen ? "rotate(0deg)" : "rotate(25deg)",
-                    }}
-                />
+                >
+                    <Hamburger
+                        sx={{
+                            ...defaultSx,
+                        }}
+                    />
+                    <Close
+                        sx={{
+                            ...defaultSx,
+                            transform: "rotate(25deg) translateY(-20px)",
+                        }}
+                    />
+                </Box>
             </Box>
         </Hide>
     );
