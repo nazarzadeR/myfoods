@@ -1,0 +1,8 @@
+{
+    "short_name": "MyFoods",
+    "name": "MyFoods",
+    "description" : "Find recipes for your meals",
+    "display": "standalone",
+    "theme_color": "#efefef",
+    "background_color": "#242424"
+}
