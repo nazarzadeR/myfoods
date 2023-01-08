@@ -2,12 +2,12 @@ import React, { useRef, useEffect } from "react";
 
 const useSingleIntersection = (
     anchor: React.MutableRefObject<HTMLElement>,
-    callback: () => void
+    callback: (entry: any) => void
 ) => {
     const observer = useRef<IntersectionObserver>(
         new IntersectionObserver(
             (entries, observer) => {
-                if (entries[0].isIntersecting) callback();
+                if (entries[0].isIntersecting) callback(entries[0]);
             },
             { threshold: 1 }
         )
@@ -21,7 +21,7 @@ const useSingleIntersection = (
         };
     }, [anchor]);
 
-    return observer.current ;
+    return observer.current;
 };
 
 export default useSingleIntersection;

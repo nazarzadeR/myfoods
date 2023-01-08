@@ -5,7 +5,7 @@ import { Box, Center } from "@chakra-ui/react";
 interface Props extends React.DetailedHTMLProps<any, any>{}
 
 const Loader: React.FC<Props> = (props) => {
-
+    const { children } = props;
     return (
         <Center w="full" h="80%" {...props}>
             <Box
@@ -37,7 +37,7 @@ const Loader: React.FC<Props> = (props) => {
                 }
             >
                 <Center w="full" h="full" fontSize="lg" fontWeight="bold" letterSpacing="wide">
-                    No Recipes
+                   { children ? children :  "No Recipes" }
                 </Center>
             </Box>
         </Center>
