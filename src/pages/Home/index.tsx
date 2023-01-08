@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Grid, GridItem, Center } from "@chakra-ui/react";
+import { Center } from "@chakra-ui/react";
 
 import { SearchInput, Pagination } from "components";
 import RecipeList from "./RecipeList";

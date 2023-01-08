@@ -2,6 +2,8 @@ export { default as Info } from "./Info";
 export { default as Home } from "./Home";
 export { default as Dots } from "./Dots";
 export { default as Close } from "./Close";
+export { default as UTurn } from "./UTurn";
+export { default as Heart } from "./Heart";
 export { default as Forward } from "./Forward";
 export { default as PagMode } from "./PagMode";
 export { default as Settings } from "./Settings";

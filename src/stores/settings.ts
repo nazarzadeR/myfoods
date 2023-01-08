@@ -1,4 +1,4 @@
-import { IRecipe } from "interface";
+import { IRecipeObj } from "interface";
 import create from "zustand";
 
 type State = {
@@ -11,11 +11,11 @@ type Actions = {
     pagPrev: () => void;
     isPrev: () => boolean;
     pagTo: (num: number) => void;
-    pagNext: (recipes: IRecipe[]) => void;
-    isNext: (recipes: IRecipe[]) => boolean;
+    pagNext: (recipes: IRecipeObj[]) => void;
+    isNext: (recipes: IRecipeObj[]) => boolean;
     setPagMode: (mode: "PAG" | "INFINITY") => void;
-    pagCord: (recipes: IRecipe[]) => { from: number; to: number };
-    pageInfo: (recipes: IRecipe[]) => { now: number; maxPage: number };
+    pagCord: (recipes: IRecipeObj[]) => { from: number; to: number };
+    pageInfo: (recipes: IRecipeObj[]) => { now: number; maxPage: number };
 };
 
 type SettingStore = State & Actions;

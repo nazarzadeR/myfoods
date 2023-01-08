@@ -30,6 +30,7 @@ const Button: React.FC<Props> = ({ name }) => {
         <Grid
             w="60%"
             h="50px"
+            replace
             fontSize="lg"
             ref={linkRef}
             zIndex={2000}

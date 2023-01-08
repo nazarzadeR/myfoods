@@ -4,6 +4,10 @@ export enum MenuType {
     PAG = "PAG",
 }
 
+export interface IRecipeObj {
+    recipe: IRecipe;
+}
+
 export interface IRecipe {
     calories: number;
     cautions: string[];

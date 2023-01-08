@@ -20,6 +20,7 @@ const index = () => {
             w="250px"
             bg="bgDark"
             top="40px"
+            zIndex="3000"
             as={motion.div}
             overflow="hidden"
             borderRadius="lg"

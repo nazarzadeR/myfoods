@@ -34,12 +34,23 @@ const MobileCard: React.FC<Props> = ({ recipe }) => {
                 <Heading w="80%" size="sm" textAlign="center" noOfLines={2}>
                     {label}
                 </Heading>
-                <Text w="80%" textAlign="center" fontSize="sm" fontWeight="bold" noOfLines={3}>
+                <Text
+                    w="80%"
+                    textAlign="center"
+                    fontSize="sm"
+                    fontWeight="bold"
+                    noOfLines={3}
+                >
                     {label} recipes take a {totalTime} minutes to cook and have
                     {calories.toFixed(0)} calories.
                 </Text>
 
-                <Button as={Link} to={`favorite/${label}`} justifySelf="flex-end">
+                <Button
+                    replace
+                    as={Link}
+                    to={`/recipe/${label}`}
+                    justifySelf="flex-end"
+                >
                     READ MORE
                 </Button>
             </VStack>

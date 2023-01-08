@@ -2,9 +2,12 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Box, Center } from "@chakra-ui/react";
 
-const Loader = () => {
+interface Props extends React.DetailedHTMLProps<any, any>{}
+
+const Loader: React.FC<Props> = (props) => {
+
     return (
-        <Center w="full" h="80%">
+        <Center w="full" h="80%" {...props}>
             <Box
                 px="10"
                 py="5"
