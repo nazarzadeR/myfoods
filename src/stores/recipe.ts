@@ -67,7 +67,7 @@ const useRecipe = create(
             },
         }),
         {
-            name: "recipes",
+            name: "recipe",
         }
     )
 );
