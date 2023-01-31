@@ -8,10 +8,10 @@ import { DesktopCard, MobileCard, Loader } from "components";
 
 const FavoriteList = () => {
     const { device, } = useSetting();
-    const { favorites , hasRecipe } = useRecipe();
+    const { favorites  } = useRecipe();
     const isDeviceMobile = device === "MOBILE";
 
-    if (!hasRecipe()) return <Loader h="100%" />;
+    if (!(favorites.length > 0)) return <Loader h="100%" />;
 
 
     return (

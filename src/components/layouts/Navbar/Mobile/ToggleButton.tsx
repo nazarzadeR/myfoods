@@ -35,7 +35,7 @@ const ToggleButton = () => {
                 w="80px"
                 as="span"
                 bg="bgDark"
-                zIndex={1100}
+                zIndex={2100}
                 cursor="pointer"
                 onClick={toggle}
                 position="absolute"

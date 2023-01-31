@@ -17,37 +17,14 @@ const Main: React.FC<Props> = (props) => {
         <Grid
             w="full"
             h="full"
+            mx="auto"
             id="content"
             zIndex={1000}
-            as={motion.div}
+            as={motion.main}
             overflowY="scroll"
-            bg="chakra-body-bg"
-            transformOrigin="top left"
-            animate={open ? "open" : "close"}
+            maxW="container.xl"
             templateRows="80px calc(100% - 80px)"
-            variants={{
-                open: {
-                    rotate: "-35deg",
-                    pointerEvents: "none",
-                    transition: {
-                        duration: 0.7,
-                        ease: [1, 0.005, 0.24, 1],
-                    },
-                },
-                close: {
-                    rotate: "0deg",
-                    pointerEvents: "all",
-                    transition: {
-                        duration: 0.7,
-                        ease: [1, 0.005, 0.24, 1],
-                    },
-                },
-            }}
-            sx={{
-                "::-webkit-scrollbar": {
-                    display: "none",
-                },
-            }}
+            
             {...prop}
         >
             {children && children}
