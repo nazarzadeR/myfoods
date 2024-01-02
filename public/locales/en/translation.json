@@ -1,0 +1,217 @@
+{
+    "words": {
+        "any": "any",
+        "dark": "Dark",
+        "back": "Back",
+        "home": "Home",
+        "diet": "diet",
+        "meal": "meal",
+        "dish": "dish",
+        "next": "next",
+        "login": "Login",
+        "light": "Light",
+        "theme": "Theme",
+        "health": "health",
+        "search": "search",
+        "profile": "Profile",
+        "cuisine": "cuisine",
+        "contact": "Contact",
+        "pagMode": "Pag Mode",
+        "signOut": "Sign out",
+        "language": "Language",
+        "favorite": "Favorite",
+        "settings": "Settings",
+        "moreSites": "More Sites",
+        "chart(mg)": "Nutrients",
+        "ingredients": "Ingredients",
+        "chart(percents)": "Total",
+        "recipes_settings": "Recipe Settings",
+
+        "meals": {
+            "breakfast": "breakfast",
+            "brunch": "brunch",
+            "lunch": "lunch",
+            "dinner": "dinner",
+            "snack": "snack",
+            "teatime": "teatime"
+        },
+        "diets": {
+            "balanced": "balanced",
+            "high-fiber": "high-fiber",
+            "high-protein": "high-protein",
+            "low-carb": "low-carb",
+            "low-fat": "low-fat",
+            "low-sodium": "low-sodium"
+        },
+        "dishes": {
+            "alcohol cocktail": "alcohol cocktail",
+            "biscuits and cookies": "biscuits and cookies",
+            "bread": "bread",
+            "cereals": "cereals",
+            "condiments and sauces": "condiments and sauces",
+            "desserts": "desserts",
+            "drinks": "drinks",
+            "egg": "egg",
+            "ice cream and custard": "ice cream and custard",
+            "main course": "main course",
+            "pancake": "pancake",
+            "pasta": "pasta",
+            "pastry": "pastry",
+            "pies and tarts": "pies and tarts",
+            "pizza": "pizza",
+            "preps": "preps",
+            "preserve": "preserve",
+            "salad": "salad",
+            "sandwiches": "sandwiches",
+            "seafood": "seafood",
+            "side dish": "side dish",
+            "soup": "soup",
+            "starter": "starter",
+            "sweets": "sweets"
+        },
+        "healths": {
+            "alcohol-cocktail": "Alcohol Cocktail",
+            "alcohol-free": "Alcohol-Free",
+            "celery-free": "Celery-Free",
+            "crustacean-free": "Crustacean-Free",
+            "dairy-free": "Dairy-Free",
+            "DASH": "DASH",
+            "egg-free": "Egg-Free",
+            "fish-free": "Fish-Free",
+            "fodmap-free": "FODMAP-Free",
+            "gluten-free": "Gluten-Free",
+            "immuno-supportive": "Immuno-Supportive",
+            "keto-friendly": "Keto-Friendly",
+            "kidney-friendly": "Kidney-Friendly",
+            "kosher": "Kosher",
+            "low-potassium": "Low Potassium",
+            "low-sugar": "Low Sugar",
+            "lupine-free": "Lupine-Free",
+            "Mediterranean": "Mediterranean",
+            "mollusk-free": "Mollusk-Free",
+            "mustard-free": "Mustard-Free",
+            "No-oil-added": "No Oil Added",
+            "paleo": "Paleo",
+            "peanut-free": "Peanut-Free",
+            "pescatarian": "Pescatarian",
+            "pork-free": "Pork-Free",
+            "red-meat-free": "Red Meat-Free",
+            "sesame-free": "Sesame-Free",
+            "shellfish-free": "Shellfish-Free",
+            "soy-free": "Soy-Free",
+            "sugar-conscious": "Sugar-Conscious",
+            "sulfite-free": "Sulfite-Free",
+            "tree-nut-free": "Tree Nut-Free",
+            "vegan": "Vegan",
+            "vegetarian": "Vegetarian",
+            "wheat-free": "Wheat-Free"
+        },
+        "cuisines": {
+            "american": "American",
+            "asian": "Asian",
+            "british": "British",
+            "caribbean": "Caribbean",
+            "central europe": "Central European",
+            "chinese": "Chinese",
+            "eastern europe": "Eastern European",
+            "french": "French",
+            "greek": "Greek",
+            "indian": "Indian",
+            "italian": "Italian",
+            "japanese": "Japanese",
+            "world": "World",
+            "korean": "Korean",
+            "kosher": "Kosher",
+            "mediterranean": "Mediterranean",
+            "mexican": "Mexican",
+            "middle eastern": "Middle Eastern",
+            "nordic": "Nordic",
+            "south american": "South American",
+            "south east asian": "South East Asian"
+        }
+    },
+    "expressions": {
+        "tagList": "Enter tags here",
+        "noTags": "No tags for this recipes",
+        "needAuth": "login needed for this page",
+        "meal": "What is your favorite meal?",
+        "calories": "around $ kcal to * kcal ",
+        "diet": "What type of diet do you follow?",
+        "health": "What you prefer for your health?",
+        "dish": "Are there specific dishes you love?",
+        "cuisine": "What are your favorite types of cuisine?",
+        "overload": "You overload the server just wait 1 minute.",
+        "tagListHeader": "Enter your tags for your suite of recipes."
+    },
+
+    "auth": {
+        "title": {
+            "login": "Login",
+            "register": "Register",
+            "other": "Other Ways"
+        },
+        "link": {
+            "otherWays": "Other ways",
+            "login": "Don't have a account ?",
+            "register": "Already have a account ?"
+        },
+        "action": {
+            "login": "Login",
+            "register": "Register"
+        },
+        "username": {
+            "hint": "Enter your username",
+            "error": {
+                "required": "Username must be required"
+            }
+        },
+        "password": {
+            "hint": "Enter your password",
+            "error": {
+                "required": "Password must be required",
+                "min": "must be minimum $ character long",
+                "match": "The password field must be used with capital and numeric characters at least once."
+            }
+        },
+        "email": {
+            "hint": "Enter your email address",
+            "error": {
+                "required": "Email address must be filled",
+                "notMatches": "It seems like you didn't type the correct email address."
+            }
+        },
+        "confirm": {
+            "hint": "Confirm password",
+            "error": {
+                "required": "Confirm password must be required",
+                "same": "The confirm filed must be same as password"
+            }
+        }
+    },
+    "home": {
+        "nothingSearched": "You have not been searching yet."
+    },
+    "contact": {
+        "title": "Contact me",
+        "button": "Send Message",
+        "email": {
+            "hint": "your email goes here",
+            "errors": {
+                "email": "I cannot get back to you unless the email address is correct.",
+                "required": "I would like to get back to you with your email address."
+            }
+        },
+        "username": {
+            "hint": "your username goes here",
+            "errors": {
+                "required": "I would like to know your name when I get back to you"
+            }
+        },
+        "message": {
+            "hint": "your messages goes here",
+            "errors": {
+                "required": "I would like to know what your message is."
+            }
+        }
+    }
+}
