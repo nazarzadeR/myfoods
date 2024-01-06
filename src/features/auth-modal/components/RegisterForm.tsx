@@ -69,6 +69,7 @@ export default function RegisterForm() {
                             flexShrink="0"
                             color="teal.400"
                             cursor="pointer"
+                            fontWeight="bolder"
                             onClick={goToLoginModal}
                             _hover={{
                                 color: "teal.300",
@@ -83,6 +84,7 @@ export default function RegisterForm() {
                             color="teal.400"
                             cursor="pointer"
                             textAlign="right"
+                            fontWeight="bolder"
                             onClick={goToOtherWaysModal}
                             _hover={{
                                 color: "teal.300",

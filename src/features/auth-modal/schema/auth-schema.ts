@@ -9,10 +9,10 @@ const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/;
 const emailRegex =
     /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
-// const UsernameSchema = (t: TFunction) =>
-//     yup.object().shape({
-//         username: yup.string().required(t("auth.username.error.required")),
-//     });
+export const UsernameSchema = (t: TFunction) =>
+    yup.object().shape({
+        username: yup.string().required(t("auth.username.error.required")),
+    });
 
 export const UserEmailSchema = (t: TFunction) =>
     yup.object().shape({

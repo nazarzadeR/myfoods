@@ -10,7 +10,10 @@ import { User, onAuthStateChanged } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 import { hasSignLink, singInWithEmailLinkAndDeleteUser } from "@/services/auth";
 
-type TMetaState = Pick<Context.TAuthContext<User>, "hasUser" | "user">;
+type TMetaState = Pick<
+    Context.TAuthContext<User>,
+    "hasUser" | "user" | "isLoading"
+>;
 
 const defaultAuthContext = {} as Context.TAuthContext<User>;
 const AuthContext = createContext(defaultAuthContext);
@@ -19,12 +22,14 @@ export function AuthProvider({ children }: TProps) {
     const [meta, setMeta] = useState<TMetaState>({
         hasUser: false,
         user: null,
+        isLoading: true,
     });
 
     let authChangedCallback = useCallback((user: User | null) => {
         setMeta({
-            hasUser: !!user,
             user,
+            hasUser: !!user,
+            isLoading: false,
         });
     }, []);
 
@@ -35,7 +40,9 @@ export function AuthProvider({ children }: TProps) {
             singInWithEmailLinkAndDeleteUser();
         }
 
-        return unSubscribe;
+        return () => {
+            unSubscribe();
+        };
     }, []);
 
     return (

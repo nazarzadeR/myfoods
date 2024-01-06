@@ -1,4 +1,19 @@
 declare namespace Api {
+    type TFirebaseErrorCodes =
+        | "auth/quota-exceeded"
+        | "auth/too-many-requests"
+        | "auth/invalid-credential"
+        | "auth/email-already-in-use"
+        | "auth/popup-closed-by-user"
+        | "auth/credential-already-in-use"
+        | "account-exists-with-different-credential";
+
+    type TFirebaseException = {
+        name: string;
+        message: string;
+        code: TFirebaseErrorCodes;
+    };
+
     type TTag = {
         id: string;
         text: string;

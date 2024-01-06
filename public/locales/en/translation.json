@@ -24,7 +24,7 @@
         "signOut": "Sign out",
         "language": "Language",
         "facebook": "Facebook",
-        "favorite": "Favorite",
+        "favorite": "Favorites",
         "settings": "Settings",
         "simpleLogin": "Simple login",
         "moreSites": "More Sites",
@@ -226,7 +226,11 @@
         }
     },
     "errors": {
-        "SOMETHING_GONE_WRONG": "Unknown error occurred"
+        "INVALID_CREDENTIAL": "Credential is invalid",
+        "SOMETHING_GONE_WRONG": "Unknown error occurred",
+        "EMAIL_IN_USE": "Email already in use, try another one",
+        "POPUP_CLOSED_BY_USER": "If you do not like it, try another one",
+        "EMAIL_LINK_QUOTA_EXCEEDED": "Too many requests for today with a magic link option, backend limit overreacted. Please try another option"
     },
     "success": {
         "EMAIL_LINK_SENDED" : "Email link send your email. Check your email, please"

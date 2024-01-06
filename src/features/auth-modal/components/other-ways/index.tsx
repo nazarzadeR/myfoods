@@ -9,11 +9,11 @@ import {
     FacebookProvider,
 } from "@/services/auth";
 import {
-    GoogleIcon,
-    FacebookIcon,
-    GithubIcon,
     MagicIcon,
     LoginIcon,
+    GithubIcon,
+    GoogleIcon,
+    FacebookIcon,
 } from "@/components";
 
 

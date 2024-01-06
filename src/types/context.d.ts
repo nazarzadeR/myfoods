@@ -2,6 +2,7 @@ declare namespace Context {
     type TAuthContext<TUser> = {
         hasUser: boolean;
         user: TUser | null;
+        isLoading: boolean;
     };
 
     type TGlobalContext = {
