@@ -14,7 +14,7 @@ export default function AvatarComp(props: TDetailedProps<{}, CenterProps>) {
 
     return (
         <Center w="10" h="10" {...props} cursor="pointer">
-            <Avatar size={{ base: "sm", md: "xs" }} src={src} name={name} />
+            <Avatar size="sm" src={src} name={name} />
         </Center>
     );
 }

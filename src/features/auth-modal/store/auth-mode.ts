@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-type TAuthMode = "LOGIN" | "REGISTER" | "OTHER";
+type TAuthMode = "LOGIN" | "REGISTER" | "OTHER" | "MAGIC";
 
 type State = {
     authMode: TAuthMode;

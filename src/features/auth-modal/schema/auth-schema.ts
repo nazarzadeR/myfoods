@@ -14,7 +14,7 @@ const emailRegex =
 //         username: yup.string().required(t("auth.username.error.required")),
 //     });
 
-const UserEmailSchema = (t: TFunction) =>
+export const UserEmailSchema = (t: TFunction) =>
     yup.object().shape({
         email: yup
             .string()
@@ -22,7 +22,7 @@ const UserEmailSchema = (t: TFunction) =>
             .matches(emailRegex, t("auth.email.error.notMatches")),
     });
 
-const PasswordSchema = (t: TFunction) =>
+export const PasswordSchema = (t: TFunction) =>
     yup.object().shape({
         password: yup
             .string()
@@ -33,7 +33,7 @@ const PasswordSchema = (t: TFunction) =>
             .matches(passwordRegex, t("auth.password.error.match")),
     });
 
-const ConfirmSchema = (t: TFunction) =>
+export const ConfirmSchema = (t: TFunction) =>
     yup.object().shape({
         confirm: yup
             .string()

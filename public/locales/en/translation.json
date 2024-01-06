@@ -8,19 +8,25 @@
         "meal": "meal",
         "dish": "dish",
         "next": "next",
+        "send": "Send",
         "login": "Login",
         "light": "Light",
         "theme": "Theme",
         "health": "health",
+        "google": "Google",
+        "github": "Github",
         "search": "search",
         "profile": "Profile",
         "cuisine": "cuisine",
         "contact": "Contact",
+        "magic": "Magic link",
         "pagMode": "Pag Mode",
         "signOut": "Sign out",
         "language": "Language",
+        "facebook": "Facebook",
         "favorite": "Favorite",
         "settings": "Settings",
+        "simpleLogin": "Simple login",
         "moreSites": "More Sites",
         "chart(mg)": "Nutrients",
         "ingredients": "Ingredients",
@@ -133,9 +139,10 @@
     "expressions": {
         "tagList": "Enter tags here",
         "noTags": "No tags for this recipes",
-        "needAuth": "login needed for this page",
+        "backToLogin": "Back to login page",
         "meal": "What is your favorite meal?",
         "calories": "around $ kcal to * kcal ",
+        "needAuth": "login needed for this page",
         "diet": "What type of diet do you follow?",
         "health": "What you prefer for your health?",
         "dish": "Are there specific dishes you love?",
@@ -147,8 +154,9 @@
     "auth": {
         "title": {
             "login": "Login",
-            "register": "Register",
-            "other": "Other Ways"
+            "other": "Other ways",
+            "magic": "Login with email",
+            "register": "Register"
         },
         "link": {
             "otherWays": "Other ways",
@@ -158,6 +166,9 @@
         "action": {
             "login": "Login",
             "register": "Register"
+        },
+        "magicLink": {
+            "info": "Enter the email address associated with your account, and we'll send a magic link to your inbox"
         },
         "username": {
             "hint": "Enter your username",
@@ -213,5 +224,11 @@
                 "required": "I would like to know what your message is."
             }
         }
+    },
+    "errors": {
+        "SOMETHING_GONE_WRONG": "Unknown error occurred"
+    },
+    "success": {
+        "EMAIL_LINK_SENDED" : "Email link send your email. Check your email, please"
     }
 }

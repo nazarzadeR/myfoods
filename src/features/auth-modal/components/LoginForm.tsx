@@ -19,11 +19,7 @@ export default function LoginForm() {
         data: Api.TAuthWithEmailAndPassword,
         _: FormikHelpers<Api.TAuthWithEmailAndPassword>,
     ) => {
-        await loginAuth.mutateAsync(data, {
-            onSettled(response) {
-                console.log(response);
-            },
-        });
+        await loginAuth.mutateAsync(data);
     };
 
     return (

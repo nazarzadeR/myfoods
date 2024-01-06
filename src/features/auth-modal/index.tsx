@@ -11,7 +11,7 @@ import { useTranslation } from "react-i18next";
 
  
 import useAuthModal from "./store/auth-mode";
-import { LoginForm, RegisterForm, OtherWays } from "./components";
+import { LoginForm, RegisterForm, OtherWays, MagicForm } from "./components";
 
 type Props = TProps<{
     isOpen: boolean;
@@ -26,6 +26,7 @@ export default function AuthModalLayout(props: Props) {
         .returnType<React.ComponentType>()
         .with("LOGIN", () => LoginForm)
         .with("OTHER", () => OtherWays)
+        .with("MAGIC", () => MagicForm)
         .with("REGISTER", () => RegisterForm)
         .otherwise(() => LoginForm);
 
@@ -35,7 +36,7 @@ export default function AuthModalLayout(props: Props) {
             motionPreset="scale"
             size={{
                 base: "sm",
-                sm: "md"
+                sm: "md",
             }}
             {...props}
         >
@@ -47,7 +48,10 @@ export default function AuthModalLayout(props: Props) {
                     alignItems="center"
                     justifyContent="center"
                 >
-                    <Heading fontSize="xx-large" letterSpacing="px">
+                    <Heading
+                        letterSpacing="px"
+                        fontSize={["x-large", "xx-large"]}
+                    >
                         {t(`auth.title.${authMode.toLowerCase()}`)}
                     </Heading>
                 </ModalHeader>

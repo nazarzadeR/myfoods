@@ -5,9 +5,10 @@ import {
     useCallback,
     createContext,
 } from "react";
-import { onAuthStateChanged, User } from "firebase/auth";
+import { User, onAuthStateChanged } from "firebase/auth";
 
 import { auth } from "@/lib/firebase";
+import { hasSignLink, singInWithEmailLinkAndDeleteUser } from "@/services/auth";
 
 type TMetaState = Pick<Context.TAuthContext<User>, "hasUser" | "user">;
 
@@ -29,6 +30,10 @@ export function AuthProvider({ children }: TProps) {
 
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, authChangedCallback);
+
+        if (hasSignLink()) {
+            singInWithEmailLinkAndDeleteUser();
+        }
 
         return unSubscribe;
     }, []);
