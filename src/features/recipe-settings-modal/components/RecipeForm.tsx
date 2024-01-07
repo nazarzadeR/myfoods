@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import Select from "./RecipeSelect";
 import TagList from "./recipe-tag-list";
+import SaveToCloud from "./SaveToCloud";
 import RecipeCaloriesSlider from "./ColoriesSlider";
 import { DIETS, DISH, MEAL, HEALTH, CUISINE } from "@/data/constants";
 
@@ -44,6 +45,8 @@ export default function RecipeForm() {
             />
 
             <TagList heading={t("expressions.tagListHeader")} />
+
+            <SaveToCloud />
         </VStack>
     );
 }

@@ -11,10 +11,9 @@ type State = {
 };
 
 type Actions = {
-    save(): void;
     addTags(...tag: string[]): void;
     deleteTagFromId(id: string): void;
-    getQuerySettings(): TRecipesSetting;
+    prepareToQuery(): Partial<TRecipesSetting>
     setQueryCalories(calories: number[]): void;
     setQuerySettings(option: keyof TRecipesSetting, value?: string): void;
 };
@@ -23,13 +22,13 @@ type SettingsStore = State & Actions;
 
 const defaultQuerySettings = {
     tags: [],
-    diet: undefined,
+    diet: "",
     minCalories: 100,
     maxCalories: 512,
-    health: undefined,
-    mealType: undefined,
-    dishType: undefined,
-    cuisineType: undefined,
+    health: "",
+    mealType: "",
+    dishType: "",
+    cuisineType: "",
 };
 
 export const useRecipeSettings = create(
@@ -37,16 +36,11 @@ export const useRecipeSettings = create(
         (set, get) => ({
             paginationMode: "PAGINATION",
             querySettings: defaultQuerySettings,
-            getQuerySettings() {
+            prepareToQuery(){
                 const { querySettings } = get();
-                const newQuerySetting = _.cloneDeep(querySettings);
 
-                return _.omitBy(
-                    newQuerySetting,
-                    (value) => value === "undefined",
-                ) as TRecipesSetting;
+                return _.omitBy(querySettings, _.isEmpty)
             },
-
             setQuerySettings: (option, value) =>
                 set((data) => ({
                     querySettings: {
@@ -89,13 +83,7 @@ export const useRecipeSettings = create(
                         tags: newTags,
                     },
                 });
-            },
-
-            save() {
-                // const { getQuerySettings  } = get();
-                // const queries = getQuerySettings();
-                // TODO: Save settings to firestore
-            },
+            }
         }),
         {
             name: "setting",

@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import { isEmpty } from "lodash";
 import { useTranslation } from "react-i18next";
 import { Select, Text, VStack } from "@chakra-ui/react";
 
@@ -21,7 +22,6 @@ export default function RecipeSelect({
     translateOptions,
 }: Props) {
     const { t } = useTranslation();
-    const isUndefined = (u: string) => u === "undefined";
     const { querySettings, setQuerySettings } = useRecipeSettings();
 
     const defaultOption = useMemo(
@@ -30,7 +30,7 @@ export default function RecipeSelect({
     );
 
     const optionsWithUndefined = useMemo(
-        () => ["undefined", ...options],
+        () => ["", ...options],
         [options],
     );
 
@@ -38,7 +38,7 @@ export default function RecipeSelect({
         () =>
             optionsWithUndefined.map((d, idx) => (
                 <option key={idx} value={d}>
-                    {isUndefined(d)
+                    {isEmpty(d)
                         ? t("words.any")
                         : t(`words.${translateOptions}.${d}`)}
                 </option>

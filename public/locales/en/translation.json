@@ -140,6 +140,7 @@
         "tagList": "Enter tags here",
         "noTags": "No tags for this recipes",
         "backToLogin": "Back to login page",
+        "saveRecipeSetting": "Save to cloud",
         "meal": "What is your favorite meal?",
         "calories": "around $ kcal to * kcal ",
         "needAuth": "login needed for this page",
@@ -233,6 +234,7 @@
         "EMAIL_LINK_QUOTA_EXCEEDED": "Too many requests for today with a magic link option, backend limit overreacted. Please try another option"
     },
     "success": {
+        "RECIPE_ADDED_TO_CLOUD": "Current settings added to cloud",
         "EMAIL_LINK_SENDED" : "Email link send your email. Check your email, please"
     }
 }
