@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import { useToast } from "@/hooks";
 import { useUtility } from "@/contexts";
-import { signWithPropUp } from "@/services/auth";
+import { signWithPropUp } from "@/services/firebase";
 
 
 export default function useProviderSign(provider: any) {

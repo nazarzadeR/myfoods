@@ -8,7 +8,7 @@ import {
 import { User, onAuthStateChanged } from "firebase/auth";
 
 import { auth } from "@/lib/firebase";
-import { hasSignLink, singInWithEmailLinkAndDeleteUser } from "@/services/auth";
+import { hasSignLink, singInWithEmailLinkAndDeleteUser } from "@/services/firebase";
 
 type TMetaState = Pick<
     Context.TAuthContext<User>,

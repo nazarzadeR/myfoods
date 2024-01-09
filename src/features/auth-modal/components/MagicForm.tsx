@@ -3,7 +3,7 @@ import { Form, Formik, FormikHelpers } from "formik";
 import { VStack, Box, Heading, Text } from "@chakra-ui/react";
 
 import useAuthModal from "../store/auth-mode";
-import { UserEmailSchema } from "../schema/auth-schema";
+import { UserEmailSchema } from "@/schema/auth";
 import useSendEmailLink from "../hooks/useSendEmailLink";
 import { InputField, ButtonField, EmailIcon } from "@/components";
 
@@ -45,6 +45,7 @@ export default function MagicLink() {
                     <InputField
                         id="email"
                         name="email"
+                        type="email"
                         left={<EmailIcon />}
                         placeholder={t("auth.email.hint")}
                     />

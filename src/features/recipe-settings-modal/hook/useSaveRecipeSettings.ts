@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import { useToast } from "@/hooks";
 import { useAuth } from "@/contexts";
-import { addRecipeSettingsToCloud } from "@/services/auth";
+import { addRecipeSettingsToCloud } from "@/services/firebase";
 
 export default function useSaveRecipeSetting() {
     const toast = useToast();

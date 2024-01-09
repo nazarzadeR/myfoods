@@ -16,6 +16,7 @@
         "google": "Google",
         "github": "Github",
         "search": "search",
+        "upload": "Upload",
         "profile": "Profile",
         "cuisine": "cuisine",
         "contact": "Contact",
@@ -26,11 +27,11 @@
         "facebook": "Facebook",
         "favorite": "Favorites",
         "settings": "Settings",
-        "simpleLogin": "Simple login",
         "moreSites": "More Sites",
         "chart(mg)": "Nutrients",
-        "ingredients": "Ingredients",
         "chart(percents)": "Total",
+        "ingredients": "Ingredients",
+        "simpleLogin": "Simple login",
         "recipes_settings": "Recipe Settings",
 
         "meals": {
@@ -138,6 +139,7 @@
     },
     "expressions": {
         "tagList": "Enter tags here",
+        "lastSeenDate": "last seen $",
         "noTags": "No tags for this recipes",
         "backToLogin": "Back to login page",
         "saveRecipeSetting": "Save to cloud",
@@ -145,11 +147,14 @@
         "calories": "around $ kcal to * kcal ",
         "needAuth": "login needed for this page",
         "diet": "What type of diet do you follow?",
+        "userPicNeeded": "Picture file need for this",
         "health": "What you prefer for your health?",
         "dish": "Are there specific dishes you love?",
         "cuisine": "What are your favorite types of cuisine?",
         "overload": "You overload the server just wait 1 minute.",
-        "tagListHeader": "Enter your tags for your suite of recipes."
+        "userPicTypeNotSupported": "This file type is not supported.",
+        "tagListHeader": "Enter your tags for your suite of recipes.",
+        "userFileSizeOverload": "File size should be a maximum of 1 MB."
     },
 
     "auth": {
@@ -230,11 +235,15 @@
         "INVALID_CREDENTIAL": "Credential is invalid",
         "SOMETHING_GONE_WRONG": "Unknown error occurred",
         "EMAIL_IN_USE": "Email already in use, try another one",
+        "EMAIL_UPDATE_NEED_VERIFY": "Verify link which sended to you",
         "POPUP_CLOSED_BY_USER": "If you do not like it, try another one",
         "EMAIL_LINK_QUOTA_EXCEEDED": "Too many requests for today with a magic link option, backend limit overreacted. Please try another option"
     },
     "success": {
+        "EMAIL_CHANGED": "Email changed successfully",
+        "USERNAME_CHANGED": "Username changed successfully",
         "RECIPE_ADDED_TO_CLOUD": "Current settings added to cloud",
-        "EMAIL_LINK_SENDED" : "Email link send your email. Check your email, please"
+        "EMAIL_LINK_SENDED" : "Email link send your email. Check your email, please",
+        "PROFILE_PIC_UPLOAD_SUCCESSFULLY": "Profile picture uploaded"
     }
 }

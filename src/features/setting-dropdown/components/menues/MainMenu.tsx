@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-import { signOutAuth } from "@/services/auth";
+import { signOutAuth } from "@/services/firebase";
 import { useAuth, useUtility } from "@/contexts";
 import {
     Dropdown,
@@ -20,7 +20,7 @@ type Props = TProps<{
 export default function MainMenu({ isActive, setMenu, setActiveMenu }: Props) {
     const { hasUser } = useAuth();
     const { t } = useTranslation();
-    const { authActions } = useUtility();
+    const { authActions, profileActions } = useUtility();
 
     const goToSettings = () => setMenu(() => "SETTINGS");
 
@@ -49,7 +49,10 @@ export default function MainMenu({ isActive, setMenu, setActiveMenu }: Props) {
             ) : null}
 
             {hasUser ? (
-                <Dropdown.Item LeftIcon={ProfileIcon} onClick={() => null}>
+                <Dropdown.Item
+                    LeftIcon={ProfileIcon}
+                    onClick={profileActions.onOpen}
+                >
                     {t("words.profile")}
                 </Dropdown.Item>
             ) : null}

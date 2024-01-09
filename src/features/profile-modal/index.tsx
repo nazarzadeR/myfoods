@@ -10,7 +10,7 @@ import {
     ModalCloseButton,
 } from "@chakra-ui/react";
 
-import RecipeSettingForm from "./components/RecipeForm";
+import ProfileModalInner from "./components/ProfileModalInner";
 
 type Props = TProps<{
     isOpen: boolean;
@@ -28,8 +28,7 @@ export default function RecipesSettingModal(props: Props) {
             motionPreset="slideInTop"
             size={{
                 base: "full",
-                sm: "md",
-                lg: "lg",
+                sm: "lg",
             }}
         >
             <ModalOverlay />
@@ -37,11 +36,11 @@ export default function RecipesSettingModal(props: Props) {
                 <ModalCloseButton />
                 <ModalHeader>
                     <Center w="full" h="full">
-                        {t("words.recipes_settings")}
+                        {t("words.profile")}
                     </Center>
                 </ModalHeader>
                 <ModalBody>
-                    <RecipeSettingForm />
+                    <ProfileModalInner />
                 </ModalBody>
             </ModalContent>
         </Modal>

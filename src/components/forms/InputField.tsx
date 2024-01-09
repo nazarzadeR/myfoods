@@ -16,17 +16,19 @@ type TProps = TDetailedProps<
     {
         size?: string;
         pwd?: boolean;
-        noLeft?: boolean;
+        noRight?: boolean;
         left?: string | JSX.Element;
+        right?: string | JSX.Element;
     },
     InputProps
 >;
 
 export default function InputField({
     left,
+    right,
     size = "lg",
     pwd = false,
-    noLeft = false,
+    noRight = false,
     ...props
 }: TProps) {
     const [show, { toggle }] = useBoolean(false);
@@ -53,8 +55,13 @@ export default function InputField({
                     type={show ? "text" : props.type}
                 />
                 {!pwd ? (
-                    meta.touched &&
-                    !noLeft && (
+                    meta.touched && !noRight && !!right ? (
+                        <InputRightElement
+                            fontSize="sm"
+                            pointerEvents="none"
+                            children={right}
+                        />
+                    ) : (
                         <InputRightElement
                             fontSize="md"
                             pointerEvents="none"

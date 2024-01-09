@@ -3,7 +3,7 @@ import { useMutation } from "react-query";
 import { useTranslation } from "react-i18next";
 
 import { useToast } from "@/hooks";
-import { sendEmailLink } from "@/services/auth";
+import { sendEmailLink } from "@/services/firebase";
 
 export default function useSendEmailLink() {
     const toast = useToast();

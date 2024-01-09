@@ -3,6 +3,7 @@ declare namespace Api {
         | "auth/quota-exceeded"
         | "auth/too-many-requests"
         | "auth/invalid-credential"
+        | "auth/operation-not-allowed"
         | "auth/email-already-in-use"
         | "auth/popup-closed-by-user"
         | "auth/credential-already-in-use"

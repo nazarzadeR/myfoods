@@ -3,7 +3,7 @@ import { Formik, Form, FormikHelpers } from "formik";
 import { Stack, HStack, Text } from "@chakra-ui/react";
 
 import useAuthModal from "../store/auth-mode";
-import { LoginSchema } from "../schema/auth-schema";
+import { LoginSchema } from "@/schema/auth";
 import { InputField, ButtonField } from "@/components";
 import useLogin from "../hooks/useLogin";
 
@@ -38,6 +38,7 @@ export default function LoginForm() {
                 >
                     <InputField
                         name="email"
+                        type="email"
                         autoComplete="email"
                         placeholder={t("auth.username.hint")}
                     />

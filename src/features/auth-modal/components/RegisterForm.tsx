@@ -4,7 +4,7 @@ import { Stack, Text, HStack } from "@chakra-ui/react";
 
 import useAuthModal from "../store/auth-mode";
 import useRegister from "../hooks/useRegister";
-import { RegisterSchema } from "../schema/auth-schema";
+import { RegisterSchema } from "@/schema/auth";
 import { InputField, ButtonField } from "@/components";
 
 export default function RegisterForm() {
@@ -42,6 +42,7 @@ export default function RegisterForm() {
                 >
                     <InputField
                         name="email"
+                        type="email"
                         autoComplete="email"
                         placeholder={t("auth.username.hint")}
                     />

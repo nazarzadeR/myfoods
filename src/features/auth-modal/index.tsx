@@ -35,8 +35,8 @@ export default function AuthModalLayout(props: Props) {
             isCentered
             motionPreset="scale"
             size={{
-                base: "sm",
-                sm: "md",
+                sm: "sm",
+                md: "md"
             }}
             {...props}
         >

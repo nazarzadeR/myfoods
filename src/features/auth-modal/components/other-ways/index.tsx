@@ -7,7 +7,7 @@ import {
     GoogleProvider,
     GithubProvider,
     FacebookProvider,
-} from "@/services/auth";
+} from "@/services/firebase";
 import {
     MagicIcon,
     LoginIcon,

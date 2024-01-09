@@ -3,7 +3,7 @@ import { useMutation } from "react-query";
 import { useTranslation } from "react-i18next";
 
 import { useToast } from "@/hooks";
-import { register } from "@/services/auth";
+import { register } from "@/services/firebase";
 import { useUtility } from "@/contexts";
 
 export default function useRegister() {
