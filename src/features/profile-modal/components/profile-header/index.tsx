@@ -1,4 +1,4 @@
-import { VStack, Stack } from "@chakra-ui/react";
+import { VStack, Stack, Hide, Show } from "@chakra-ui/react";
 
 import ProfileLastSeen from "./components/LastSeen";
 import ProfilePicture from "./components/ProfilePicture";
@@ -26,14 +26,19 @@ export default function ProfileHeader() {
                     h="full"
                     w={{
                         base: "full",
-                        sm: "auto"
+                        sm: "auto",
                     }}
                     justifyContent="space-between"
                     alignItems="center"
                 >
+                    <Show below="sm">
+                        <ProfileLastSeen />
+                    </Show>
                     <ChangeUsernameInput />
                     <ChangeEmailInput />
-                    <ProfileLastSeen />
+                    <Hide below="sm">
+                        <ProfileLastSeen />
+                    </Hide>
                 </VStack>
             </Stack>
             <ProfilePicChangeInput />

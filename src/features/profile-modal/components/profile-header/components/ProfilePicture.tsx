@@ -13,14 +13,10 @@ export default function ProfilePicture() {
 
     return (
         <Box
-
+            maxW="320px"
+            maxH="300px"
             position="relative"
             borderRadius="md"
-            maxW="360px"
-            w={{
-                base: "60%",
-                sm: "full"
-            }}
             boxSize={{ sm: "140" }}
         >
             <Image w="full" h="full" src={imageSrc} borderRadius="md" />

@@ -3,7 +3,7 @@ import { TFunction } from "i18next";
 
 import { SUPPORTED_FILE_TYPES } from "@/data/constants";
 
-const MAX_FILE_SIZE = 1024 * 1024;
+const MAX_FILE_SIZE = 4 * 1024 * 1024;
 
 export const UserProfilePicSchema = (t: TFunction) =>
     yup.object().shape({
@@ -13,10 +13,8 @@ export const UserProfilePicSchema = (t: TFunction) =>
             .test(
                 "fileSize",
                 t("expressions.userFileSizeOverload"),
-                (file: any) => {
-                    console.log(file.size, MAX_FILE_SIZE)
-                    return file && file?.size <= MAX_FILE_SIZE
-                },
+                (file: any) => file && file?.size <= MAX_FILE_SIZE
+                ,
             )
             .test(
                 "fileType",

@@ -139,7 +139,7 @@
     },
     "expressions": {
         "tagList": "Enter tags here",
-        "lastSeenDate": "last seen $",
+        "lastSeenDate": "last login $",
         "noTags": "No tags for this recipes",
         "backToLogin": "Back to login page",
         "saveRecipeSetting": "Save to cloud",
@@ -150,11 +150,13 @@
         "userPicNeeded": "Picture file need for this",
         "health": "What you prefer for your health?",
         "dish": "Are there specific dishes you love?",
+        "unauthorized": "This page requires you to log in",
         "cuisine": "What are your favorite types of cuisine?",
         "overload": "You overload the server just wait 1 minute.",
+        "underDevelopment": "This page have been under development",
         "userPicTypeNotSupported": "This file type is not supported.",
         "tagListHeader": "Enter your tags for your suite of recipes.",
-        "userFileSizeOverload": "File size should be a maximum of 1 MB."
+        "userFileSizeOverload": "File size should be a maximum of 4 MB."
     },
 
     "auth": {

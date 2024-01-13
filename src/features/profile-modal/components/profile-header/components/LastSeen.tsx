@@ -2,7 +2,7 @@ import { get } from "lodash";
 import { useTranslation } from "react-i18next";
 
 import { useAuth } from "@/contexts";
-import { Hide, Text } from "@chakra-ui/react";
+import { Text } from "@chakra-ui/react";
 
 export default function LastSeen() {
     const { user } = useAuth();
@@ -17,8 +17,8 @@ export default function LastSeen() {
     );
 
     return (
-        <Hide below="sm">
-            <Text color="gray.400"  fontSize="sm">{lastSeenSentences}</Text>
-        </Hide>
+        <Text color="gray.400" fontSize="sm">
+            {lastSeenSentences}
+        </Text>
     );
 }

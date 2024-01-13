@@ -1,27 +1,28 @@
 import { Formik, Form } from "formik";
 import { useTranslation } from "react-i18next";
-import { Box, Spinner } from "@chakra-ui/react";
+import { Box, HStack } from "@chakra-ui/react";
 
 import { useAuth } from "@/contexts";
-import { InputField } from "@/components";
-import { UserEmailSchema } from "@/schema/auth"
+import { ButtonField, InputField, SendIcon } from "@/components";
+import { UserEmailSchema } from "@/schema/auth";
 import useEmailChange from "../hook/useEmailChange";
 
 type TCredential = {
-    email: string
+    email: string;
 };
 
 export default function ChangeEmailInput() {
     const { user } = useAuth();
-    const { t } = useTranslation()
+    const { t } = useTranslation();
     const { mutateAsync } = useEmailChange();
 
-    const onKeyDownOfEnter = (e: React.KeyboardEvent<HTMLFormElement>) =>
-        e.key === "Enter";
+    const isInitialAndCurrentDifferent = (initial: string, current: string) =>
+        initial !== current;
 
     const onSubmit = async ({ email }: TCredential) => {
         await mutateAsync(email);
     };
+
     return (
         <Box w="full">
             <Formik
@@ -32,22 +33,29 @@ export default function ChangeEmailInput() {
                 }}
             >
                 {(ctx) => (
-                    <Form
-                        onKeyDown={(e) =>
-                            onKeyDownOfEnter(e) && ctx.handleSubmit()
-                        }
-                    >
-                        <InputField
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder={user?.email || ""}
-                            right={
-                                ctx.isSubmitting
-                                    ? ((<Spinner size="sm" />) as any)
-                                    : undefined
-                            }
-                        />
+                    <Form>
+                        <HStack>
+                            <InputField
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder={user?.email || ""}
+                            />
+
+                            {isInitialAndCurrentDifferent(
+                                ctx.initialValues.email,
+                                ctx.values.email,
+                            ) && (
+                                <ButtonField
+                                    size="lg"
+                                    type="submit"
+                                    colorScheme="green"
+                                    isLoading={ctx.isSubmitting}
+                                >
+                                    <SendIcon color="white" />
+                                </ButtonField>
+                            )}
+                        </HStack>
                     </Form>
                 )}
             </Formik>

@@ -1,11 +1,11 @@
 import { Formik, Form } from "formik";
 import { useTranslation } from "react-i18next";
-import { Box, Spinner } from "@chakra-ui/react";
+import { Box, HStack } from "@chakra-ui/react";
 
 import { useAuth } from "@/contexts";
-import { InputField } from "@/components";
 import { UsernameSchema } from "@/schema/auth";
 import useUsernameUpdate from "../hook/useUsernameChange";
+import { InputField, ButtonField, SendIcon } from "@/components";
 
 type TCredential = {
     username: string;
@@ -16,8 +16,8 @@ export default function ChangeUsernameInput() {
     const { t } = useTranslation();
     const { mutateAsync } = useUsernameUpdate();
 
-    const onKeyDownOfEnter = (e: React.KeyboardEvent<HTMLFormElement>) =>
-        e.key === "Enter";
+    const isInitialAndCurrentDifferent = (initial: string, current: string) =>
+        initial !== current;
 
     const onSubmit = async ({ username }: TCredential) => {
         await mutateAsync(username);
@@ -33,22 +33,28 @@ export default function ChangeUsernameInput() {
                 }}
             >
                 {(ctx) => (
-                    <Form
-                        onKeyDown={(e) =>
-                            onKeyDownOfEnter(e) && ctx.handleSubmit()
-                        }
-                    >
-                        <InputField
-                            type="text"
-                            id="username"
-                            name="username"
-                            placeholder={user?.displayName || ""}
-                            right={
-                                ctx.isSubmitting
-                                    ? ((<Spinner size="sm" />) as any)
-                                    : undefined
-                            }
-                        />
+                    <Form>
+                        <HStack>
+                            <InputField
+                                type="text"
+                                id="username"
+                                name="username"
+                                placeholder={user?.displayName || ""}
+                            />
+                            {isInitialAndCurrentDifferent(
+                                ctx.initialValues.username,
+                                ctx.values.username,
+                            ) && (
+                                <ButtonField
+                                size="lg"
+                                    type="submit"
+                                    isLoading={ctx.isSubmitting}
+                                    colorScheme="green"
+                                >
+                                    <SendIcon />
+                                </ButtonField>
+                            )}
+                        </HStack>
                     </Form>
                 )}
             </Formik>
