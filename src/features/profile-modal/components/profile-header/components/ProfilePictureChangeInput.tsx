@@ -29,9 +29,7 @@ export default function ProfilePictureChangeInput() {
         formik.setFieldValue("userPicture", e.target.files[0]);
 
     return (
-        <Box
-            w="full"
-        >
+        <Box w="full">
             <Stack
                 as="form"
                 onSubmit={formik.handleSubmit as any}

@@ -6,7 +6,6 @@ import { useToast } from "@/hooks";
 import { useUtility } from "@/contexts";
 import { signWithPropUp } from "@/services/firebase";
 
-
 export default function useProviderSign(provider: any) {
     const toast = useToast();
     const { t } = useTranslation();
@@ -26,9 +25,9 @@ export default function useProviderSign(provider: any) {
                 )
                 .otherwise(() => onErrorToast("SOMETHING_GONE_WRONG"));
         },
-        onSuccess(){
+        onSuccess() {
             authActions.onClose();
-        }
+        },
     });
     return handleProvider;
 }

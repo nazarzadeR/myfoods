@@ -153,6 +153,8 @@
         "unauthorized": "This page requires you to log in",
         "cuisine": "What are your favorite types of cuisine?",
         "overload": "You overload the server just wait 1 minute.",
+        "searchStringRequired": "Nothing searched without any words",
+        "searchStringNotSafe": "only sentences and words acceptable",
         "underDevelopment": "This page have been under development",
         "userPicTypeNotSupported": "This file type is not supported.",
         "tagListHeader": "Enter your tags for your suite of recipes.",
@@ -239,13 +241,15 @@
         "EMAIL_IN_USE": "Email already in use, try another one",
         "EMAIL_UPDATE_NEED_VERIFY": "Verify link which sended to you",
         "POPUP_CLOSED_BY_USER": "If you do not like it, try another one",
-        "EMAIL_LINK_QUOTA_EXCEEDED": "Too many requests for today with a magic link option, backend limit overreacted. Please try another option"
+        "EMAIL_LINK_QUOTA_EXCEEDED": "Too many requests for today with a magic link option, backend limit overreacted. Please try another option",
+        "TO_MANY_REQUEST_TO_RECIPES": "To many request with in 1 minute, limit overreacted, please wait 1 minute"
     },
     "success": {
         "EMAIL_CHANGED": "Email changed successfully",
         "USERNAME_CHANGED": "Username changed successfully",
         "RECIPE_ADDED_TO_CLOUD": "Current settings added to cloud",
-        "EMAIL_LINK_SENDED" : "Email link send your email. Check your email, please",
-        "PROFILE_PIC_UPLOAD_SUCCESSFULLY": "Profile picture uploaded"
+        "PROFILE_PIC_UPLOAD_SUCCESSFULLY": "Profile picture uploaded",
+        "EMAIL_LINK_SENDED" : "Email link send your email. Check your email, please"
+        
     }
 }

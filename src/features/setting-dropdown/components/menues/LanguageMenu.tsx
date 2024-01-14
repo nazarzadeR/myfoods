@@ -15,7 +15,11 @@ type Props = TProps<{
     setMenu: React.Dispatch<React.SetStateAction<any>>;
 }>;
 
-export default function LanguageMenu({ isActive, setMenu, setActiveMenu }: Props) {
+export default function LanguageMenu({
+    isActive,
+    setMenu,
+    setActiveMenu,
+}: Props) {
     const { t, i18n } = useTranslation();
 
     const backWard = () => setMenu(() => "SETTINGS");

@@ -1,4 +1,4 @@
-export const SUPPORTED_FILE_TYPES = ['image/jpeg', 'image/png']
+export const SUPPORTED_FILE_TYPES = ["image/jpeg", "image/png"];
 export const MEDIA_BREAKPOINTS = {
     MOBILE: "(min-width: 640px)",
     TABLET: "(min-width: 768px)",

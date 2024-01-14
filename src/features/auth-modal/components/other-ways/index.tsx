@@ -16,7 +16,6 @@ import {
     FacebookIcon,
 } from "@/components";
 
-
 export default function OtherWays() {
     const { t } = useTranslation();
     return (

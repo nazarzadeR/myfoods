@@ -1,4 +1,4 @@
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 import {
     Box,
     Card,
@@ -16,12 +16,11 @@ type Props = TProps<{
     Icon: ComponentWithAs<"svg">;
 }>;
 
-
-export default function WithSimpleLink({ to, title,Icon }: Props) {
+export default function WithSimpleLink({ to, title, Icon }: Props) {
     const { setAuthMode } = useAuthModal();
 
     const goTo = () => setAuthMode(to);
-    
+
     return (
         <Card
             px="3"
@@ -53,8 +52,17 @@ export default function WithSimpleLink({ to, title,Icon }: Props) {
                 </Box>
             </CardBody>
 
-            <CardFooter display="flex" justifyContent="center" w={["70%", "auto"]} p="2">
-                <Heading fontSize={["large", "medium"]} as="h6" textAlign="center">
+            <CardFooter
+                display="flex"
+                justifyContent="center"
+                w={["70%", "auto"]}
+                p="2"
+            >
+                <Heading
+                    fontSize={["large", "medium"]}
+                    as="h6"
+                    textAlign="center"
+                >
                     {title}
                 </Heading>
             </CardFooter>

@@ -50,7 +50,7 @@ export function UtilityProvider({ children }: TProps) {
         isOpen: isProfileOpen,
     } = useDisclosure();
 
-    const refresh = () => setRefreshed(prev => prev + 1)
+    const refresh = () => setRefreshed((prev) => prev + 1);
 
     return (
         <UtilityContext.Provider

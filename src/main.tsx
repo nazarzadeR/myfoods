@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { disableReactDevTools } from "@fvilers/disable-react-devtools"
+import { disableReactDevTools } from "@fvilers/disable-react-devtools";
 
 import App from "./App.tsx";
 import ContextManager from "@/setup/context-manager";
 
 import "@/lib/i18n.ts";
 
-if(import.meta.env.PROD){
+if (import.meta.env.PROD) {
     disableReactDevTools();
 }
 

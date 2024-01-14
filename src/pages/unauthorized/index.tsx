@@ -27,9 +27,7 @@ export default function NotFound() {
                 alignContent="center"
             >
                 <Center w="full">
-                    <Heading size="md">
-                        {t("expressions.unauthorized")}
-                    </Heading>
+                    <Heading size="md">{t("expressions.unauthorized")}</Heading>
                 </Center>
                 <Center w="full">
                     <Box

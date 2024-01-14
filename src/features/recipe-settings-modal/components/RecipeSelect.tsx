@@ -29,10 +29,7 @@ export default function RecipeSelect({
         [querySettings, option],
     );
 
-    const optionsWithUndefined = useMemo(
-        () => ["", ...options],
-        [options],
-    );
+    const optionsWithUndefined = useMemo(() => ["", ...options], [options]);
 
     const renderOptions = useMemo(
         () =>

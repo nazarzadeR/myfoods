@@ -13,7 +13,7 @@ type State = {
 type Actions = {
     addTags(...tag: string[]): void;
     deleteTagFromId(id: string): void;
-    prepareToQuery(): Partial<TRecipesSetting>
+    prepareToQuery(): TRecipesSetting;
     setQueryCalories(calories: number[]): void;
     setQuerySettings(option: keyof TRecipesSetting, value?: string): void;
 };
@@ -36,10 +36,16 @@ export const useRecipeSettings = create(
         (set, get) => ({
             paginationMode: "PAGINATION",
             querySettings: defaultQuerySettings,
-            prepareToQuery(){
+            prepareToQuery() {
                 const { querySettings } = get();
+                const filterFunc = (val: any) => {
+                    return _.isNumber(val) ? false : _.isEmpty(val);
+                };
 
-                return _.omitBy(querySettings, _.isEmpty)
+                return _.omitBy(
+                    querySettings,
+                    filterFunc,
+                ) as Api.TRecipeApiParams;
             },
             setQuerySettings: (option, value) =>
                 set((data) => ({
@@ -83,7 +89,7 @@ export const useRecipeSettings = create(
                         tags: newTags,
                     },
                 });
-            }
+            },
         }),
         {
             name: "setting",

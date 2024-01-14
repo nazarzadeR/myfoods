@@ -1,4 +1,4 @@
-import { match } from "ts-pattern"
+import { match } from "ts-pattern";
 import { useMutation } from "react-query";
 import { useTranslation } from "react-i18next";
 
@@ -26,7 +26,6 @@ export default function useRegister() {
                         onErrorToast("EMAIL_IN_USE"),
                     )
                     .otherwise(() => onErrorToast("SOMETHING_GONE_WRONG"));
-
             },
             onSettled() {
                 authActions.onClose();

@@ -8,17 +8,17 @@ export const hasNavigator = !_.isUndefined(navigator);
 export const hasLocation = !_.isUndefined(window.location);
 
 export async function wait(millisecond: number) {
-    await new Promise((resolve) => setTimeout(resolve, millisecond))
+    await new Promise((resolve) => setTimeout(resolve, millisecond));
 }
 
-export function random(max = 1, floatingFunc: 'ceil' | 'floor' = 'ceil') {
-    return Math[floatingFunc](Math.random() * max)
+export function random(max = 1, floatingFunc: "ceil" | "floor" = "ceil") {
+    return Math[floatingFunc](Math.random() * max);
 }
 
 export function randomFromArr<T>(arr: T[]): T | undefined {
-    if (arr.length === 0) return
+    if (arr.length === 0) return;
 
-    return arr[random(arr.length, 'floor')]
+    return arr[random(arr.length, "floor")];
 }
 
 export function detectOSInfo() {

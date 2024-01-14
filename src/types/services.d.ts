@@ -40,6 +40,8 @@ declare namespace Api {
         cuisineType?: Recipes.TCuisine;
     };
 
+    type TRecipeApiResponse = AxiosResponse<Recipe.TRecipesResponseType, any>
+
     type TAuthWithEmailAndPassword = {
         email: string;
         password: string;

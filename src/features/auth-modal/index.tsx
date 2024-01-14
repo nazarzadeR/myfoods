@@ -9,7 +9,6 @@ import {
 import { match } from "ts-pattern";
 import { useTranslation } from "react-i18next";
 
- 
 import useAuthModal from "./store/auth-mode";
 import { LoginForm, RegisterForm, OtherWays, MagicForm } from "./components";
 
@@ -36,7 +35,7 @@ export default function AuthModalLayout(props: Props) {
             motionPreset="scale"
             size={{
                 sm: "sm",
-                md: "md"
+                md: "md",
             }}
             {...props}
         >

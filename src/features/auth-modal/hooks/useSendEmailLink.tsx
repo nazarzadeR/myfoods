@@ -24,7 +24,6 @@ export default function useSendEmailLink() {
             onError(error: Api.TFirebaseException) {
                 localStorage.removeItem("currentEmailUserFromMagicLink");
 
-
                 match(error.code)
                     .with("auth/quota-exceeded", () =>
                         onErrorToast("EMAIL_LINK_QUOTA_EXCEEDED"),

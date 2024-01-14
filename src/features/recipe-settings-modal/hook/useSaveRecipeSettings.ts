@@ -23,19 +23,17 @@ export default function useSaveRecipeSetting() {
         (settings: Api.TRecipeApiParams) =>
             addRecipeSettingsToCloud(id, settings),
         {
-            
             onError(error: Api.TFirebaseException) {
                 match(error.code).otherwise(() =>
                     onErrorToast("SOMETHING_GONE_WRONG"),
                 );
             },
-            onSuccess(){
+            onSuccess() {
                 toast({
                     status: "success",
                     description: t("success.RECIPE_ADDED_TO_CLOUD"),
                 });
             },
-
         },
     );
 

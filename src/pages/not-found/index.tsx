@@ -13,9 +13,9 @@ export default function NotFound() {
         [],
     );
 
-	useRedirect({
-		where: "/"
-	});
+    useRedirect({
+        where: "/",
+    });
 
     return (
         <Box

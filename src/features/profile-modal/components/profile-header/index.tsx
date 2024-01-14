@@ -4,7 +4,7 @@ import ProfileLastSeen from "./components/LastSeen";
 import ProfilePicture from "./components/ProfilePicture";
 import ChangeEmailInput from "./components/ChangeEmailInput";
 import ChangeUsernameInput from "./components/ChangeUsernameInput";
-import ProfilePicChangeInput from "./components/ProfilePictureChangeInput"
+import ProfilePicChangeInput from "./components/ProfilePictureChangeInput";
 
 export default function ProfileHeader() {
     return (

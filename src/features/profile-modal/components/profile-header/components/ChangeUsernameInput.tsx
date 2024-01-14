@@ -46,7 +46,7 @@ export default function ChangeUsernameInput() {
                                 ctx.values.username,
                             ) && (
                                 <ButtonField
-                                size="lg"
+                                    size="lg"
                                     type="submit"
                                     isLoading={ctx.isSubmitting}
                                     colorScheme="green"
