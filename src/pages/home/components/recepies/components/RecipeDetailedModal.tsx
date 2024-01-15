@@ -12,7 +12,7 @@ export default function RecipeDetailedModal() {
     const onClose = () => setSelected(null);
 
     return (
-        <AnimatePresence>
+        <>
             {isOpen && (
                 <>
                     <Box
@@ -24,16 +24,16 @@ export default function RecipeDetailedModal() {
                         onClick={onClose}
                     />
                     <Center
+                        w="310px"
                         inset="0"
                         top="50%"
                         left="50%"
                         zIndex="1420"
+                        borderRadius="md"
                         position="absolute"
                         transform="translate(-50%,-50%)"
-                        w="310px"
                     >
                         <Box
-                        
                             w="full"
                             zIndex="1660"
                             as={motion.div}
@@ -42,14 +42,13 @@ export default function RecipeDetailedModal() {
                             layoutId={`card-${selected.label}`}
                             bg="var(--chakra-colors-chakra-body-bg)"
                         >
-                           
-                            <Box w="full">
+                            <Box w="full" borderRadius="md">
                                 <SelectedRecipeModalInner recipe={selected} />
                             </Box>
                         </Box>
                     </Center>
                 </>
             )}
-        </AnimatePresence>
+        </>
     );
 }

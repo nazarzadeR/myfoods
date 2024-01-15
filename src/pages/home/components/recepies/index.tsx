@@ -19,7 +19,7 @@ export default function Recipes() {
     // Return if hits come but nothing inside it
     // if(!hasResponse()) return;
 
-    if(!hasHits()) return;
+    if (!hasHits()) return;
 
     return (
         <SelectedRecipeProvider>

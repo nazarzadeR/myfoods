@@ -12,7 +12,7 @@ export default function NavbarDesktop() {
     return (
         <Flex
             w="full"
-            h='60px'
+            h="60px"
             my={{ base: 2 }}
             p={{ base: "4" }}
             position="relative"

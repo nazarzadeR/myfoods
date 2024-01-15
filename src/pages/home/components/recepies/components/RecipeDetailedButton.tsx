@@ -8,7 +8,7 @@ type Props = TProps<{
 }>;
 
 export default function recipeDetailedButton({ recipe }: Props) {
-    const { t } = useTranslation()
+    const { t } = useTranslation();
     const linkRef = useRef<any>(null);
     const color = useColorModeValue("white", "black");
     const btnColor = useColorModeValue("black", "white");

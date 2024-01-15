@@ -1,1 +1,1 @@
-export { default as MultipleRoundSpinner } from "./MultipleRoundSpinner"
+export { default as MultipleRoundSpinner } from "./MultipleRoundSpinner";

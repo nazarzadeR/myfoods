@@ -7,7 +7,6 @@ import { RecipeSearchSchema } from "@/schema/base";
 import Button from "./components/SearchInputButton";
 import useSearchRecipes from "@/pages/home/hooks/useSearchRecipes";
 
-
 export default function SearchInput() {
     const { t } = useTranslation();
     const { mutateAsync } = useSearchRecipes();
@@ -19,9 +18,9 @@ export default function SearchInput() {
             const { query } = values;
 
             await mutateAsync(query, {
-                onSettled(){
+                onSettled() {
                     helpers.resetForm();
-                }
+                },
             });
         },
     });

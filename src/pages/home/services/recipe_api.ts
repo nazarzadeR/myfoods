@@ -23,7 +23,7 @@ export const recipes_endpoint = async (params: Api.TRecipeApiParams) => {
                     tags: stringifiedTags,
                     app_id: VITE_RECIPES_APP_ID,
                     app_key: VITE_RECIPES_APP_KEY,
-                }
+                },
             },
         );
 

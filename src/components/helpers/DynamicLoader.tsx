@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 
-import { MultipleRoundSpinner } from "@/components"
+import { MultipleRoundSpinner } from "@/components";
 
 type Props = TProps<{
     comp?: React.ReactNode;

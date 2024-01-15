@@ -16,11 +16,11 @@ export default function useSearchRecipes() {
 
     const query = prepareToQuery();
 
-    const onError = (errorCode: string) => toast({
-        status: "error",
-        description: t(`errors.${errorCode}`)
-    })
-
+    const onError = (errorCode: string) =>
+        toast({
+            status: "error",
+            description: t(`errors.${errorCode}`),
+        });
 
     const recipes_mutation = useMutation<Api.TRecipeApiResponse, unknown, any>(
         (q: string) => recipes_endpoint({ q, ...query }),
@@ -29,7 +29,7 @@ export default function useSearchRecipes() {
                 setLoading(true);
             },
             onSettled() {
-                setLoading(false)
+                setLoading(false);
             },
             onSuccess(response) {
                 setResponse(response.data);
@@ -37,7 +37,7 @@ export default function useSearchRecipes() {
             onError(error: any) {
                 match(error.response.status)
                     .with(429, () => onError("TO_MANY_REQUEST_TO_RECIPES"))
-                    .otherwise(() => onError("SOMETHING_WENT_WRONG") )
+                    .otherwise(() => onError("SOMETHING_WENT_WRONG"));
             },
         },
     );

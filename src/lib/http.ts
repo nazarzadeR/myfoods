@@ -7,10 +7,7 @@ export const Instance = axios.create({
 });
 
 export const RECIPES_ENDPOINT = axios.create({
-    baseURL: new URL(
-        "api/recipes/v2",
-        import.meta.env.VITE_URL,
-    ).toString(),
+    baseURL: new URL("api/recipes/v2", import.meta.env.VITE_URL).toString(),
     headers: {
         "Content-Type": "application/json",
     },

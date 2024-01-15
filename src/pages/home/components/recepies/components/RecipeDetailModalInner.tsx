@@ -1,6 +1,7 @@
 import { VStack, Image, Heading, Text } from "@chakra-ui/react";
 
-import RecipeButton from "./RecipeDetailedButton"
+import RecipeButton from "./RecipeDetailedButton";
+import { nanoid } from "nanoid";
 
 type Props = TProps<{
     recipe: Recipe.TRecipe;
@@ -8,7 +9,7 @@ type Props = TProps<{
 
 export default function RecipeDetailModalInner({ recipe }: Props) {
     return (
-        <VStack>
+        <VStack bg="bgDark" borderRadius="md">
             <Image
                 w="full"
                 boxSize="full"
@@ -18,13 +19,7 @@ export default function RecipeDetailModalInner({ recipe }: Props) {
                 borderTopRadius="md"
             />
 
-            <VStack
-    
-    
-                borderRadius="base"
-                justifyContent="space-between"
-               
-            >
+            <VStack w="full" borderRadius="base" justifyContent="space-between">
                 <Heading
                     my="4"
                     as="h3"
@@ -36,18 +31,17 @@ export default function RecipeDetailModalInner({ recipe }: Props) {
                 </Heading>
 
                 <VStack as="ul" listStyleType="none" mx="2">
-                    {
-                        recipe.ingredientLines.slice(0, 3).map((ingredient) => (
-                            <Text
-                                as="li"
-                                fontSize="sm"
-                                mt="1 !important"
-                                textAlign="center"
-                            >
-                                {ingredient.substring(0, 80)}
-                            </Text>
-                        ))
-                    }
+                    {recipe.ingredientLines.slice(0, 3).map((ingredient) => (
+                        <Text
+                            as="li"
+                            fontSize="sm"
+                            key={nanoid()}
+                            mt="1 !important"
+                            textAlign="center"
+                        >
+                            {ingredient.substring(0, 80)}
+                        </Text>
+                    ))}
                 </VStack>
 
                 <RecipeButton recipe={recipe} />

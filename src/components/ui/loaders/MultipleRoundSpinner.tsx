@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Box, Center, Flex } from "@chakra-ui/react";
 
-
 export default function MultipleRoundSpinner() {
     return (
         <Center w="full" h="full" bgColor="chakra-body-bg" borderRadius="lg">

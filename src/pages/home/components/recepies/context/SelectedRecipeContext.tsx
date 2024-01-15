@@ -11,12 +11,10 @@ const SelectedContext = createContext(defaultContext);
 export default function SelectedRecipeProvider({ children }: TProps) {
     const [selected, setSelected] = useState<Recipe.TRecipe | null>(null);
     return (
-        <SelectedContext.Provider
-            value={{ selected, setSelected }}
-        >
+        <SelectedContext.Provider value={{ selected, setSelected }}>
             {children && children}
         </SelectedContext.Provider>
     );
 }
 
-export const useSelectedRecipe = () => useContext(SelectedContext)
+export const useSelectedRecipe = () => useContext(SelectedContext);

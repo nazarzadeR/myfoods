@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { Button, Box } from "@chakra-ui/react";
 
-import { MultipleRoundSpinner } from "@/components"
+import { MultipleRoundSpinner } from "@/components";
 
 type Props = TProps<{
     loading: boolean;

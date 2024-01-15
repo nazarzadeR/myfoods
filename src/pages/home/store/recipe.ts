@@ -26,10 +26,10 @@ export const useRecipeStore = create<TRecipesStore>((set, get) => ({
     setResponse: (response) => set({ response }),
     setLoading: (isLoading) => set({ isLoading }),
     setHasLimitOverload: (overload) => set({ hasLimitOverloaded: overload }),
-    hasResponse(){
-      const { response } = get();
-      
-      return !_.isEmpty(response)
+    hasResponse() {
+        const { response } = get();
+
+        return !_.isEmpty(response);
     },
     hasHits() {
         const { getHits } = get();
