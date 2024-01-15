@@ -14,7 +14,7 @@ export default function SearchInput(props: Props) {
             <Input
                 w="full"
                 h="full"
-                zIndex="1900"
+                zIndex="1400"
                 outline="none"
                 autoCorrect="off"
                 autoComplete="off"

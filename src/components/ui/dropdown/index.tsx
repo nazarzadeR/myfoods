@@ -14,7 +14,7 @@ export default function Dropdown({
                     p="2"
                     w="230px"
                     bg="bgDark"
-                    zIndex="1450"
+                    zIndex="1600"
                     as={motion.div}
                     overflow="hidden"
                     borderRadius="lg"

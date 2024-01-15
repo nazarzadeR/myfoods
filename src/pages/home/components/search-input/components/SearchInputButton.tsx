@@ -15,7 +15,7 @@ export default function SearchInputButton({ loading, onClick }: Props) {
             p="2px"
             h="50px"
             w="80px"
-            zIndex="2000"
+            zIndex="1400"
             borderRadius="lg"
             position="relative"
             ml="-50px !important"

@@ -1,6 +1,6 @@
 import { Center, Flex } from "@chakra-ui/react";
 
-import { SearchInput } from "./components";
+import { SearchInput, Recipes } from "./components";
 
 export default function Home() {
     return (
@@ -8,6 +8,25 @@ export default function Home() {
             <Center w="full">
                 <SearchInput />
             </Center>
+
+            <Center
+                my="5"
+                px="4"
+                gap="6"
+                w="full"
+                h="full"
+                flexWrap="wrap"
+                overflowY="scroll"
+                sx={sxOfNonScrollbar}
+            >
+                <Recipes />
+            </Center>
         </Flex>
     );
 }
+
+const sxOfNonScrollbar = {
+    "::-webkit-scrollbar": {
+        display: "none",
+    },
+};

@@ -12,13 +12,12 @@ export default function NavbarDesktop() {
     return (
         <Flex
             w="full"
-            minH="15"
-            maxH="20"
+            h='60px'
+            my={{ base: 2 }}
             p={{ base: "4" }}
             position="relative"
             alignItems="center"
             boxSizing="border-box"
-            my={{ base: 2, md: 0 }}
             justifyContent={{ base: "center", md: "space-between" }}
         >
             <Heading
