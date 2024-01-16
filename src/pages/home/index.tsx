@@ -9,24 +9,18 @@ export default function Home() {
                 <SearchInput />
             </Center>
 
-            <Center
+            <Flex
                 my="5"
                 px="4"
-                gap="6"
+                gap="3"
                 w="full"
                 h="full"
                 flexWrap="wrap"
-                overflowY="scroll"
-                sx={sxOfNonScrollbar}
+                justifyContent="center"
             >
                 <Recipes />
-            </Center>
+            </Flex>
         </Flex>
     );
 }
 
-const sxOfNonScrollbar = {
-    "::-webkit-scrollbar": {
-        display: "none",
-    },
-};

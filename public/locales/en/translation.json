@@ -151,6 +151,8 @@
         "userPicNeeded": "Picture file need for this",
         "health": "What you prefer for your health?",
         "dish": "Are there specific dishes you love?",
+        "noResponse": "You have not been searching yet.",
+        "noHits": "No recipes found in the current search",
         "unauthorized": "This page requires you to log in",
         "cuisine": "What are your favorite types of cuisine?",
         "overload": "You overload the server just wait 1 minute.",

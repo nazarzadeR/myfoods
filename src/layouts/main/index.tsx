@@ -30,6 +30,7 @@ export default function MainLayout({
                 ref={ref}
                 flexDir="column"
                 as={motion.main}
+                overflowY="scroll"
                 maxW="container.xl"
                 sx={mainLayoutScrollSX}
                 alignContent="flex-start"
@@ -44,14 +45,8 @@ export default function MainLayout({
 
 const mainLayoutScrollSX = {
     "::-webkit-scrollbar": {
-        width: "4px",
-    },
-    "::-webkit-scrollbar-track": {
-        background: "shazam",
-    },
-    "::-webkit-scrollbar-thumb": {
-        background: "teal",
-    },
+        display: "none",
+    }
 };
 
 const mobileNavbarVariants: Variants = {
