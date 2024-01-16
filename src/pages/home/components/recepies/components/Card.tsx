@@ -13,23 +13,23 @@ export default function Card({ hit: { recipe } }: Props) {
     const onClickHandle = () => setSelected(recipe);
 
     return (
-        <Box
-            w="310px"
-            h="250px"
-            as={motion.div}
-            cursor="pointer"
-            borderRadius="base"
-            layoutId={`card-${recipe.label}`}
-        >
-            <Image
+        <Box w="310px" h="250px" cursor="pointer" borderRadius="base">
+            <Box
                 w="full"
                 h="full"
-                loading="lazy"
-                src={recipe.image}
-                alt={recipe.label}
-                borderRadius="base"
-                onClick={onClickHandle}
-            />
+                as={motion.div}
+                layoutId={`card-${recipe.label}`}
+            >
+                <Image
+                    w="full"
+                    h="full"
+                    loading="lazy"
+                    src={recipe.image}
+                    alt={recipe.label}
+                    borderRadius="base"
+                    onClick={onClickHandle}
+                />
+            </Box>
         </Box>
     );
 }

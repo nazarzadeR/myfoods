@@ -2,10 +2,10 @@ import Lottie from "lottie-react";
 import { useTranslation } from "react-i18next";
 import { Center, Box, Heading, VStack } from "@chakra-ui/react";
 
-import NoHitsData from "@/assets/lottie/no_recipe-found.json"
+import NoHitsData from "@/assets/lottie/no_recipe-found.json";
 
 export default function NotHits() {
-     const { t } = useTranslation();
+    const { t } = useTranslation();
     return (
         <VStack w="full" h="full">
             <Center as={VStack} w="full" h="full" transform="translateY(-60px)">

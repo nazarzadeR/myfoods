@@ -13,6 +13,7 @@ type Actions = {
     setLoading(isLoading: boolean): void;
     setHasLimitOverload(overload: boolean): void;
     setResponse(response: Recipe.TRecipesResponseType): void;
+    mergeRecipes(response: Recipe.TRecipesResponseType): void;
 };
 
 type TRecipesStore = State & Actions;
@@ -42,5 +43,21 @@ export const useRecipeStore = create<TRecipesStore>((set, get) => ({
             response: { hits },
         } = get();
         return hits;
+    },
+    mergeRecipes(newResponse) {
+        const { response } = get();
+        const pickedResponse: Partial<Recipe.TRecipesResponseType> = {
+            to: newResponse.to,
+            count: newResponse.count,
+            _links: newResponse._links,
+            hits: [...response.hits, ...newResponse.hits],
+        };
+
+        set(() => ({
+            response: {
+                ...response,
+                ...pickedResponse,
+            },
+        }));
     },
 }));

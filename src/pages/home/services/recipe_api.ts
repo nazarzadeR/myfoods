@@ -1,5 +1,5 @@
 import _ from "lodash";
-import { RECIPES_ENDPOINT } from "@/lib/http";
+import { Instance, RECIPES_ENDPOINT } from "@/lib/http";
 
 export const recipes_endpoint = async (params: Api.TRecipeApiParams) => {
     let recipeData: Api.TRecipeApiResponse;
@@ -32,3 +32,13 @@ export const recipes_endpoint = async (params: Api.TRecipeApiParams) => {
         throw error;
     }
 };
+
+export const recipes_infinite_pagination =
+    (initial_link: string) =>
+    async ({ pageParam = initial_link }) => {
+        try {
+            return Instance.get(pageParam);
+        } catch (error: any) {
+            throw error;
+        }
+    };

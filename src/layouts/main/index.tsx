@@ -46,7 +46,7 @@ export default function MainLayout({
 const mainLayoutScrollSX = {
     "::-webkit-scrollbar": {
         display: "none",
-    }
+    },
 };
 
 const mobileNavbarVariants: Variants = {
