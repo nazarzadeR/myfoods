@@ -3,7 +3,7 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 type TRecipesSetting = Api.TRecipeApiParams;
-export type TPaginationMode = "INFINITY" | "PAGINATION";
+export type TPaginationMode = "INFINITY" | "WITH_BUTTON";
 
 type State = {
     paginationMode: TPaginationMode;
@@ -15,6 +15,7 @@ type Actions = {
     deleteTagFromId(id: string): void;
     prepareToQuery(): TRecipesSetting;
     setQueryCalories(calories: number[]): void;
+    setPaginationMode(mode: TPaginationMode): void;
     setQuerySettings(option: keyof TRecipesSetting, value?: string): void;
 };
 
@@ -34,7 +35,7 @@ const defaultQuerySettings = {
 export const useRecipeSettings = create(
     persist<SettingsStore>(
         (set, get) => ({
-            paginationMode: "PAGINATION",
+            paginationMode: "WITH_BUTTON",
             querySettings: defaultQuerySettings,
             prepareToQuery() {
                 const { querySettings } = get();
@@ -46,6 +47,11 @@ export const useRecipeSettings = create(
                     querySettings,
                     filterFunc,
                 ) as Api.TRecipeApiParams;
+            },
+            setPaginationMode(mode) {
+                set(() => ({
+                    paginationMode: mode,
+                }));
             },
             setQuerySettings: (option, value) =>
                 set((data) => ({

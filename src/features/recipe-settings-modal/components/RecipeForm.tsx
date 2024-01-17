@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import Select from "./RecipeSelect";
 import TagList from "./recipe-tag-list";
 import SaveToCloud from "./SaveToCloud";
+import PaginationButton from "./PaginationButton";
 import RecipeCaloriesSlider from "./ColoriesSlider";
 import { DIETS, DISH, MEAL, HEALTH, CUISINE } from "@/data/constants";
 
@@ -11,8 +12,8 @@ export default function RecipeForm() {
     const { t } = useTranslation();
     return (
         <VStack mb="8" mx="4" gap="3">
+            <PaginationButton />
             <RecipeCaloriesSlider />
-
             <Select
                 option="diet"
                 options={DIETS}
@@ -43,9 +44,7 @@ export default function RecipeForm() {
                 translateOptions="cuisines"
                 label={t("expressions.cuisine")}
             />
-
             <TagList heading={t("expressions.tagListHeader")} />
-
             <SaveToCloud />
         </VStack>
     );

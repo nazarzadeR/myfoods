@@ -3,23 +3,21 @@ import { map } from "lodash";
 
 import Card from "./components/Card";
 import { DynamicLoader } from "@/components";
-import InfinityPagination from "../InfinityPagination";
+import Pagination from "./components/Pagination";
+import RecipeLoading from "./components/RecipeLoading";
 import { useRecipeStore } from "@/pages/home/store/recipe";
 import SelectedRecipeModal from "./components/RecipeDetailedModal";
 import SelectedRecipeProvider from "./context/SelectedRecipeContext";
-
-//! TODO: Complete other situation
 
 const NoHits = lazy(() => import("./components/NotHits"));
 const NothingSearched = lazy(() => import("./components/NothingSearched"));
 
 export default function Recipes() {
-    const { hasHits, getHits, hasResponse } = useRecipeStore();
+    const { hasHits, getHits, hasResponse, isLoading } = useRecipeStore();
 
     const hits = getHits();
 
-    // * Return loading state
-    // if(isLoading)
+    if (isLoading) return <RecipeLoading />;
 
     if (!hasResponse()) return <DynamicLoader comp={<NothingSearched />} />;
 
@@ -30,8 +28,8 @@ export default function Recipes() {
             {map(hits, (hit, idx) => (
                 <Card key={idx} hit={hit} />
             ))}
+            <Pagination />
             <SelectedRecipeModal />
-            <InfinityPagination />
         </SelectedRecipeProvider>
     );
 }

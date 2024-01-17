@@ -29,11 +29,14 @@
         "settings": "Settings",
         "readMore": "Read More",
         "moreSites": "More Sites",
+        "loadMore": "Load More",
         "chart(mg)": "Nutrients",
         "chart(percents)": "Total",
         "ingredients": "Ingredients",
         "simpleLogin": "Simple login",
+        "pagWithButton": "Button Pagination",
         "recipes_settings": "Recipe Settings",
+        "pagWithInfinity": "Continuous Scroll",
 
         "meals": {
             "breakfast": "breakfast",
