@@ -13,10 +13,12 @@ import {
     signInWithEmailAndPassword,
     createUserWithEmailAndPassword,
 } from "firebase/auth";
+import { nanoid } from "nanoid";
 import { isEmpty } from "lodash";
-import { collection, doc, setDoc } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { collection, doc, setDoc, updateDoc, arrayUnion } from "firebase/firestore";
 
+import { Instance } from "@/lib/http";
 import { auth, db, storage } from "@/lib/firebase";
 
 export const GoogleProvider = new GoogleAuthProvider();
@@ -26,6 +28,9 @@ export const FacebookProvider = new FacebookAuthProvider();
 const USERS_REF = collection(db, "users");
 const USER_PROFILE_PIC_REF = (id: string) =>
     ref(storage, `profile-images/${id}`);
+
+const USER_RECIPE_PIC_REF = (uid: string, id: string) =>
+    ref(storage, `user-recipe-images/${uid}/${id}`);
 
 export async function uploadAndUpdateUserPictures(user: User, file: File) {
     const userImageReference = USER_PROFILE_PIC_REF(user.uid);
@@ -37,6 +42,34 @@ export async function uploadAndUpdateUserPictures(user: User, file: File) {
     return updateProfile(user, {
         photoURL: downloadedPhotoURL,
     });
+}
+
+export async function addRecipeToFavoriteFirebase(uid: string, recipe: Recipe.TRecipe){
+    const photoUId = nanoid();
+    let imageBuffer: Buffer;
+
+    try {
+        const responseOfImage  = await Instance.get(recipe.image, { responseType: "arraybuffer" });
+        imageBuffer = Buffer.from(responseOfImage.data, "binary");
+    }catch(error){
+        throw error;
+    }
+
+    const favoriteImageReference = USER_RECIPE_PIC_REF(uid, photoUId)
+
+    await uploadBytes(favoriteImageReference, imageBuffer);
+
+    const photoURL = await getDownloadURL(favoriteImageReference);
+
+    const linkedRecipe = {
+        photoURL: photoURL,
+        ...recipe
+    }
+
+    return updateDoc(doc(USERS_REF, uid), {
+        favorites: arrayUnion(linkedRecipe)
+    })
+
 }
 
 export function singInWithEmailLinkAndDeleteUser() {

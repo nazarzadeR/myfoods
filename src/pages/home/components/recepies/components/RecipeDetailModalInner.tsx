@@ -1,15 +1,20 @@
+import { nanoid } from "nanoid";
 import { VStack, Image, Heading, Text } from "@chakra-ui/react";
 
 import RecipeButton from "./RecipeDetailedButton";
-import { nanoid } from "nanoid";
+import QuickAddFavorite from "./QuickAddFavorites";
+import { useAuth } from "@/contexts";
 
 type Props = TProps<{
     recipe: Recipe.TRecipe;
 }>;
 
 export default function RecipeDetailModalInner({ recipe }: Props) {
+    const { hasUser } = useAuth();
     return (
-        <VStack bg="bgDark" borderRadius="md">
+        <VStack position="relative" bg="bgDark" borderRadius="md">
+            {hasUser && <QuickAddFavorite recipe={recipe} />}
+
             <Image
                 w="full"
                 boxSize="full"

@@ -242,6 +242,7 @@
         }
     },
     "errors": {
+        "CORS_ERROR": "Cors problem occurred",
         "INVALID_CREDENTIAL": "Credential is invalid",
         "SOMETHING_GONE_WRONG": "Unknown error occurred",
         "EMAIL_IN_USE": "Email already in use, try another one",
@@ -253,6 +254,7 @@
     "success": {
         "EMAIL_CHANGED": "Email changed successfully",
         "USERNAME_CHANGED": "Username changed successfully",
+        "ADDED_TO_FAVORITES": "Recipe added to favorites",
         "RECIPE_ADDED_TO_CLOUD": "Current settings added to cloud",
         "PROFILE_PIC_UPLOAD_SUCCESSFULLY": "Profile picture uploaded",
         "EMAIL_LINK_SENDED" : "Email link send your email. Check your email, please"

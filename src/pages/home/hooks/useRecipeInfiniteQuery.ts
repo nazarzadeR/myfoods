@@ -35,7 +35,7 @@ export default function useRecipesInfiniteQuery() {
         onError(error: any) {
             match(error.response.status)
                 .with(429, () => onError("TO_MANY_REQUEST_TO_RECIPES"))
-                .otherwise(() => onError("SOMETHING_WENT_WRONG"));
+                .otherwise(() => onError("SOMETHING_GONE_WRONG"));
         },
         onSuccess(data) {
             const newRecipesResponse = _.last(data.pages)?.data;
