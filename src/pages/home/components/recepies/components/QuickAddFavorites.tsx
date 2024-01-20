@@ -10,7 +10,7 @@ type Props = TProps<{
 
 export default function QuickAddFavorites({ recipe }: Props) {
     const bgColor = useColorModeValue("gray.200", "gray.700");
-    const { mutateAsync, isLoading } = useQuickAddFavorite() ;
+    const { mutateAsync, isLoading } = useQuickAddFavorite();
 
     const handleOnClick = async () => {
         await mutateAsync(recipe);

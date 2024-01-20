@@ -28,6 +28,11 @@ declare namespace Api {
         from_username: string;
     };
 
+    type TRecipeSettingCloud = {
+        paginationMode: TPaginationMode;
+        querySettings: TRecipesSetting;
+    };
+
     type TRecipeApiParams = {
         q?: string;
         tags?: TTags;

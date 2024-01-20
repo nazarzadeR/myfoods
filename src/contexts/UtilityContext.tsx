@@ -1,5 +1,7 @@
 import { useDisclosure } from "@chakra-ui/react";
-import { createContext, lazy, Suspense, useContext, useState } from "react";
+import { createContext, lazy, useContext, useState } from "react";
+
+import { DynamicLoader } from "@/components";
 
 const AuthLoginModal = lazy(() => import("@/features/auth-modal"));
 const ProfileModal = lazy(() => import("@/features/profile-modal"));
@@ -26,7 +28,6 @@ type TUtilityContext = {
     };
 };
 
-const Fallback = () => null;
 const defaultContext = {} as TUtilityContext;
 const UtilityContext = createContext(defaultContext);
 
@@ -74,29 +75,29 @@ export function UtilityProvider({ children }: TProps) {
             }}
         >
             {children && children}
-            <Suspense fallback={<Fallback />}>
+            <DynamicLoader>
                 {isAuthOpen && (
                     <AuthLoginModal isOpen={isAuthOpen} onClose={onAuthClose} />
                 )}
-            </Suspense>
+            </DynamicLoader>
 
-            <Suspense fallback={<Fallback />}>
+            <DynamicLoader>
                 {isRecipeSettingOpen && (
                     <RecipeSettingModal
                         isOpen={isRecipeSettingOpen}
                         onClose={onRecipeSettingClose}
                     />
                 )}
-            </Suspense>
+            </DynamicLoader>
 
-            <Suspense fallback={<Fallback />}>
+            <DynamicLoader>
                 {isProfileOpen && (
                     <ProfileModal
                         isOpen={isProfileOpen}
                         onClose={onProfileClose}
                     />
                 )}
-            </Suspense>
+            </DynamicLoader>
         </UtilityContext.Provider>
     );
 }

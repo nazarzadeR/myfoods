@@ -8,6 +8,7 @@ import {
 import { User, onAuthStateChanged } from "firebase/auth";
 
 import { auth } from "@/lib/firebase";
+import useRefetchIfNeeded from "@/hooks/useRefetchIfNeeded";
 import {
     hasSignLink,
     singInWithEmailLinkAndDeleteUser,
@@ -22,6 +23,7 @@ const defaultAuthContext = {} as Context.TAuthContext<User>;
 const AuthContext = createContext(defaultAuthContext);
 
 export function AuthProvider({ children }: TProps) {
+    const refetchIfNeeded = useRefetchIfNeeded();
     const [meta, setMeta] = useState<TMetaState>({
         hasUser: false,
         user: null,
@@ -34,6 +36,8 @@ export function AuthProvider({ children }: TProps) {
             hasUser: !!user,
             isLoading: false,
         });
+
+        if (!!user) refetchIfNeeded();
     }, []);
 
     useEffect(() => {

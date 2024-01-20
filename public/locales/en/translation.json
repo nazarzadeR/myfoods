@@ -115,7 +115,8 @@
             "tree-nut-free": "Tree Nut-Free",
             "vegan": "Vegan",
             "vegetarian": "Vegetarian",
-            "wheat-free": "Wheat-Free"
+            "wheat-free": "Wheat-Free",
+            "pecatarian": "pecatarian"
         },
         "cuisines": {
             "american": "American",

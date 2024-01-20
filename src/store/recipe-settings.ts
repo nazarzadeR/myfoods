@@ -1,6 +1,8 @@
 import _ from "lodash";
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
+import { createJSONStorage, persist } from "zustand/middleware";
+
+import { recipeSettingStorage } from "@/helpers/zustand_persist_storage";
 
 type TRecipesSetting = Api.TRecipeApiParams;
 export type TPaginationMode = "INFINITY" | "WITH_BUTTON";
@@ -24,12 +26,12 @@ type SettingsStore = State & Actions;
 const defaultQuerySettings = {
     tags: [],
     diet: "",
-    minCalories: 100,
-    maxCalories: 512,
     health: "",
     mealType: "",
     dishType: "",
     cuisineType: "",
+    minCalories: 100,
+    maxCalories: 512,
 };
 
 export const useRecipeSettings = create(
@@ -98,7 +100,11 @@ export const useRecipeSettings = create(
             },
         }),
         {
-            name: "setting",
+            name: "recipe_settings",
+            storage: createJSONStorage(() => recipeSettingStorage),
         },
     ),
 );
+
+export const refetchRecipes = () =>
+    useRecipeSettings.persist.getOptions().storage?.getItem("recipe_settings");
