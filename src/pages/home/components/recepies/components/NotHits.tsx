@@ -8,7 +8,7 @@ export default function NotHits() {
     const { t } = useTranslation();
     return (
         <VStack w="full" h="full">
-            <Center as={VStack} w="full" h="full" transform="translateY(-60px)">
+            <Center as={VStack} w="full" h="full">
                 <Center w="full">
                     <Box
                         as={Lottie}

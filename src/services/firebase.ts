@@ -8,11 +8,14 @@ import {
     GoogleAuthProvider,
     signInWithEmailLink,
     FacebookAuthProvider,
+    confirmPasswordReset,
     sendSignInLinkToEmail,
     isSignInWithEmailLink,
+    sendPasswordResetEmail,
     signInWithEmailAndPassword,
     createUserWithEmailAndPassword,
 } from "firebase/auth";
+import { isEmpty } from "lodash";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import {
     doc,
@@ -46,6 +49,31 @@ export async function uploadAndUpdateUserPictures(user: User, file: File) {
     return updateProfile(user, {
         photoURL: downloadedPhotoURL,
     });
+}
+
+export function isResetOopReceived() {
+    const params = new URLSearchParams(window.location.search);
+    const mode = params.get("mode");
+    const code = params.get("oobCode");
+
+    return !!code && isEmpty(code) && mode === "resetPassword";
+}
+
+export function sendResetPassword(email: string) {
+    return sendPasswordResetEmail(auth, email, {
+        handleCodeInApp: true,
+        url: new URL("/sign/forgot_pass", window.location.origin).toString(),
+    });
+}
+
+export function confirmPassword(oobCode: string, password: string) {
+    const email = localStorage.getItem("currentEmailUserFromResetPass");
+
+    if (!!!email) {
+        throw new Error("Reset email not found");
+    }
+
+    return confirmPasswordReset(auth, oobCode, password);
 }
 
 export async function addRecipeToFavoriteFirebase(
@@ -111,7 +139,7 @@ export function hasSignLink() {
 export function sendEmailLink(email: string) {
     return sendSignInLinkToEmail(auth, email, {
         handleCodeInApp: true,
-        url: window.location.origin,
+        url: new URL("/sign/external_links", window.location.origin).toString(),
     });
 }
 

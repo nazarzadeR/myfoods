@@ -3,9 +3,9 @@ import { useMutation } from "react-query";
 import { useTranslation } from "react-i18next";
 
 import { useToast } from "@/hooks";
-import { sendEmailLink } from "@/services/firebase";
+import { sendResetPassword } from "@/services/firebase";
 
-export default function useSendEmailLink() {
+export default function useSendResetLink() {
     const toast = useToast();
     const { t } = useTranslation();
 
@@ -15,14 +15,14 @@ export default function useSendEmailLink() {
             description: t(`errors.${errorCode}`),
         });
 
-    const sendEmailLinkMutation = useMutation(
-        (email: string) => sendEmailLink(email),
+    const sendResetLinkMutation = useMutation(
+        (email: string) => sendResetPassword(email),
         {
             onMutate(email: string) {
-                localStorage.setItem("currentEmailUserFromMagicLink", email);
+                localStorage.setItem("currentEmailUserFromResetPass", email);
             },
             onError(error: Api.TFirebaseException) {
-                localStorage.removeItem("currentEmailUserFromMagicLink");
+                localStorage.removeItem("currentEmailUserFromResetPass");
 
                 match(error.code)
                     .with("auth/quota-exceeded", () =>
@@ -33,11 +33,11 @@ export default function useSendEmailLink() {
             onSuccess() {
                 toast({
                     status: "success",
-                    description: t("success.EMAIL_LINK_SENDED"),
+                    description: t("success.RESET_PASS_SENDED.TOAST"),
                 });
             },
         },
     );
 
-    return sendEmailLinkMutation;
+    return sendResetLinkMutation;
 }

@@ -187,6 +187,9 @@
         "magicLink": {
             "info": "Enter the email address associated with your account, and we'll send a magic link to your inbox"
         },
+        "resetPass": {
+            "info": "Enter your new password to regain access and strengthen the security of your account. "
+        },
         "username": {
             "hint": "Enter your username",
             "error": {
@@ -218,6 +221,44 @@
     },
     "home": {
         "nothingSearched": "You have not been searching yet."
+    },
+     "sign": {
+        "head": {
+            "login": "Welcome",
+            "register": "Greeting",
+            "forgotPass": "Reset Password"
+        },
+        "info": {
+            "login": {
+                "head": "Bring order to your work and life.",
+                "body": "Experience focus, organization, and tranquility with TodosOfMine"
+            },
+            "reset": {
+                "body": "To reset your password, please enter your email address."
+            },
+            "other": {
+                "head": "Select login type",
+                "magic": {
+                    "head": "Login with email",
+                    "body": "Enter the email address associated with your account, and we'll send a magic link to your inbox"
+                }
+            }
+        },
+        "button": {
+            "login": "Login",
+            "register": "Register",
+            "reset": "Reset my password",
+            "magic": "Send magic link"
+        },
+        
+        "link": {
+            "magic": "Return to",
+            "goLogin": "Back to",
+            "otherWays": "Other ways",
+            "login": "Don't have a account?",
+            "forgot": "Forgot your password?",
+            "register": "Already have a account?"
+        }
     },
     "contact": {
         "title": "Contact me",
@@ -258,7 +299,16 @@
         "ADDED_TO_FAVORITES": "Recipe added to favorites",
         "RECIPE_ADDED_TO_CLOUD": "Current settings added to cloud",
         "PROFILE_PIC_UPLOAD_SUCCESSFULLY": "Profile picture uploaded",
-        "EMAIL_LINK_SENDED" : "Email link send your email. Check your email, please"
+        "EMAIL_LINK_SENDED" : {
+            "TOAST": "Email link send your email. Check your email, please",
+            "TITLE": "Email link sended",
+            "DESCRIPTION": "Email link sent, look at your email, and click the link sent by myfoods. If you do not receive an email, please resend and check your email twice."
+        },
+        "RESET_PASS_SENDED" : {
+            "TOAST": "Reset link send your email. Check your email, please",
+            "TITLE": "Reset email sended",
+            "DESCRIPTION": "Reset email sent, look at your email, and click the link sent by myfoods. If you do not receive an email, please resend and check your email twice."
+        }
         
     }
 }

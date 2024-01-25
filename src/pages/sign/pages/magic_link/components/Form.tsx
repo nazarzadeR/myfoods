@@ -1,29 +1,35 @@
+import { useState } from "react";
+import { Formik, Form } from "formik";
+import { useNavigate } from "react-router";
 import { useTranslation } from "react-i18next";
-import { Form, Formik, FormikHelpers } from "formik";
-import { VStack, Box, Heading, Text } from "@chakra-ui/react";
+import { VStack, Heading, Box, Text } from "@chakra-ui/react";
 
-import useAuthModal from "../store/auth-mode";
+import LinkSendedAlert from "./SendedAlert";
 import { UserEmailSchema } from "@/schema/auth";
-import useSendEmailLink from "../hooks/useSendEmailLink";
-import { InputField, ButtonField, EmailIcon } from "@/components";
+import { InputField, EmailIcon, ButtonField } from "@/components";
+import useSendEmailLink from "@/pages/sign/hooks/useSendEmailLink";
 
 type TCredential = {
     email: string;
 };
 
-export default function MagicLink() {
+export default function MagicForm() {
+    const navigate = useNavigate();
     const { t } = useTranslation();
-    const { setAuthMode } = useAuthModal();
     const { mutateAsync } = useSendEmailLink();
+    const [isSended, setSended] = useState(false);
 
-    const backToLogin = () => setAuthMode("LOGIN");
+    const onClose = () => setSended(false);
+    const backToLogin = () => navigate("/sign");
 
-    const onSubmit = async (
-        { email }: TCredential,
-        _: FormikHelpers<TCredential>,
-    ) => {
-        await mutateAsync(email);
+    const onSubmit = async ({ email }: TCredential) => {
+        await mutateAsync(email, {
+            onError: () => setSended(false),
+            onSuccess: () => setSended(true),
+        });
     };
+
+    if (isSended) return <LinkSendedAlert onClose={onClose} />;
 
     return (
         <Formik
@@ -32,8 +38,11 @@ export default function MagicLink() {
             validationSchema={UserEmailSchema(t)}
         >
             {(ctx) => (
-                <VStack as={Form} spacing="4">
-                    <Box w="full" mb="2">
+                <VStack as={Form} spacing="4" maxW="320px">
+                    <Heading fontSize="xx-large" textAlign="center">
+                        {t("sign.head.login")}
+                    </Heading>
+                    <Box w="full">
                         <Heading
                             as="h4"
                             textAlign="center"

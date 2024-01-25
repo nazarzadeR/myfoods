@@ -3,13 +3,11 @@ import { useMutation } from "react-query";
 import { useTranslation } from "react-i18next";
 
 import { useToast } from "@/hooks";
-import { login } from "@/services/firebase";
-import { useUtility } from "@/contexts";
+import { register } from "@/services/firebase";
 
-export default function useLogin() {
+export default function useRegister() {
     const toast = useToast();
     const { t } = useTranslation();
-    const { authActions } = useUtility();
 
     const onErrorToast = (errorCode: string) =>
         toast({
@@ -18,17 +16,17 @@ export default function useLogin() {
         });
 
     const loginMutation = useMutation(
-        (data: Api.TAuthWithEmailAndPassword) => login(data),
+        (data: Api.TAuthWithEmailAndPassword) => register(data),
         {
             onError(error: Api.TFirebaseException) {
                 match(error.code)
-                    .with("auth/invalid-credential", () =>
-                        onErrorToast("INVALID_CREDENTIAL"),
+                    .with("auth/email-already-in-use", () =>
+                        onErrorToast("EMAIL_IN_USE"),
                     )
                     .otherwise(() => onErrorToast("SOMETHING_GONE_WRONG"));
             },
             onSettled() {
-                authActions.onClose();
+                // TODO: Redirect to home page
             },
         },
     );

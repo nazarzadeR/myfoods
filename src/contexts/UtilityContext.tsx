@@ -1,9 +1,8 @@
 import { useDisclosure } from "@chakra-ui/react";
 import { createContext, lazy, useContext, useState } from "react";
 
-import { DynamicLoader } from "@/components";
+import { DynamicLoader, ModalRoundSpinner } from "@/components";
 
-const AuthLoginModal = lazy(() => import("@/features/auth-modal"));
 const ProfileModal = lazy(() => import("@/features/profile-modal"));
 const RecipeSettingModal = lazy(
     () => import("@/features/recipe-settings-modal"),
@@ -11,14 +10,9 @@ const RecipeSettingModal = lazy(
 
 type TUtilityContext = {
     refresh(): void;
-    isAuthOpen: boolean;
     isProfileOpen: boolean;
     isRecipeSettingOpen: boolean;
     recipeActions: {
-        onOpen(): void;
-        onClose(): void;
-    };
-    authActions: {
         onOpen(): void;
         onClose(): void;
     };
@@ -33,11 +27,6 @@ const UtilityContext = createContext(defaultContext);
 
 export function UtilityProvider({ children }: TProps) {
     const [_, setRefreshed] = useState(0);
-    const {
-        onOpen: onAuthOpen,
-        onClose: onAuthClose,
-        isOpen: isAuthOpen,
-    } = useDisclosure();
 
     const {
         onOpen: onRecipeSettingOpen,
@@ -57,17 +46,13 @@ export function UtilityProvider({ children }: TProps) {
         <UtilityContext.Provider
             value={{
                 refresh,
-                isAuthOpen,
                 isProfileOpen,
                 isRecipeSettingOpen,
                 recipeActions: {
                     onOpen: onRecipeSettingOpen,
                     onClose: onRecipeSettingClose,
                 },
-                authActions: {
-                    onOpen: onAuthOpen,
-                    onClose: onAuthClose,
-                },
+
                 profileActions: {
                     onOpen: onProfileOpen,
                     onClose: onProfileClose,
@@ -75,13 +60,8 @@ export function UtilityProvider({ children }: TProps) {
             }}
         >
             {children && children}
-            <DynamicLoader>
-                {isAuthOpen && (
-                    <AuthLoginModal isOpen={isAuthOpen} onClose={onAuthClose} />
-                )}
-            </DynamicLoader>
 
-            <DynamicLoader>
+            <DynamicLoader fallback={<ModalRoundSpinner />}>
                 {isRecipeSettingOpen && (
                     <RecipeSettingModal
                         isOpen={isRecipeSettingOpen}
@@ -90,7 +70,7 @@ export function UtilityProvider({ children }: TProps) {
                 )}
             </DynamicLoader>
 
-            <DynamicLoader>
+            <DynamicLoader fallback={<ModalRoundSpinner />}>
                 {isProfileOpen && (
                     <ProfileModal
                         isOpen={isProfileOpen}

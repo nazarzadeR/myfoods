@@ -4,6 +4,7 @@ export { default as InfoIcon } from "./Info";
 export { default as HomeIcon } from "./Home";
 export { default as UserIcon } from "./User";
 export { default as SendIcon } from "./Send";
+export { default as LockIcon } from "./Lock";
 export { default as CrossIcon } from "./Cross";
 export { default as CheckIcon } from "./Check";
 export { default as EmailIcon } from "./Email";

@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router";
 
 import { signOutAuth } from "@/services/firebase";
 import { useAuth, useUtility } from "@/contexts";
@@ -18,10 +19,12 @@ type Props = TProps<{
 }>;
 
 export default function MainMenu({ isActive, setMenu, setActiveMenu }: Props) {
+    const navigate = useNavigate();
     const { hasUser } = useAuth();
     const { t } = useTranslation();
-    const { authActions, profileActions } = useUtility();
+    const { profileActions } = useUtility();
 
+    const goToSignPage = () => navigate("/sign");
     const goToSettings = () => setMenu(() => "SETTINGS");
 
     return (
@@ -40,10 +43,7 @@ export default function MainMenu({ isActive, setMenu, setActiveMenu }: Props) {
             </Dropdown.Item>
 
             {!hasUser ? (
-                <Dropdown.Item
-                    LeftIcon={LoginIcon}
-                    onClick={authActions.onOpen}
-                >
+                <Dropdown.Item LeftIcon={LoginIcon} onClick={goToSignPage}>
                     {t("words.login")}
                 </Dropdown.Item>
             ) : null}

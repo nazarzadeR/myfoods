@@ -49,40 +49,65 @@ export default function InputField({
                 )}
                 <Input
                     w="full"
+                    size={size}
                     variant="outline"
                     {...field}
                     {...(props as any)}
                     type={show ? "text" : props.type}
                 />
-                {!pwd ? (
-                    meta.touched && !noRight && !!right ? (
-                        <InputRightElement
-                            fontSize="sm"
-                            pointerEvents="none"
-                            children={right}
-                        />
-                    ) : (
-                        <InputRightElement
-                            fontSize="md"
-                            pointerEvents="none"
-                            color={meta.error ? "crimson" : "green.600"}
-                            children={
-                                meta.error ? <CrossIcon /> : <CheckIcon />
-                            }
-                        />
-                    )
-                ) : (
-                    <InputRightElement
-                        cursor="pointer"
-                        fontSize="x-large"
-                        userSelect="none"
-                        onClick={() => toggle()}
-                        children={show ? <OpenEyeIcon /> : <CloseEyeIcon />}
-                    />
-                )}
+                <CreateRightIcon
+                    pwd={pwd}
+                    meta={meta}
+                    show={show}
+                    right={right}
+                    toggle={toggle}
+                    noRight={noRight}
+                />
             </InputGroup>
 
             <FormErrorMessage>{meta.error}</FormErrorMessage>
         </FormControl>
+    );
+}
+
+type CreateRightIconProps = Pick<TProps, "pwd" | "right" | "noRight"> & {
+    show: boolean;
+    meta: any;
+    toggle: any;
+};
+
+function CreateRightIcon({
+    pwd,
+    right,
+    meta,
+    toggle,
+    show,
+    noRight,
+}: CreateRightIconProps) {
+    if (noRight || meta.touched) return null;
+
+    return !pwd ? (
+        !!right ? (
+            <InputRightElement
+                fontSize="sm"
+                pointerEvents="none"
+                children={right}
+            />
+        ) : (
+            <InputRightElement
+                fontSize="md"
+                pointerEvents="none"
+                color={meta.error ? "crimson" : "green.600"}
+                children={meta.error ? <CrossIcon /> : <CheckIcon />}
+            />
+        )
+    ) : (
+        <InputRightElement
+            cursor="pointer"
+            fontSize="x-large"
+            userSelect="none"
+            onClick={() => toggle()}
+            children={show ? <OpenEyeIcon /> : <CloseEyeIcon />}
+        />
     );
 }
