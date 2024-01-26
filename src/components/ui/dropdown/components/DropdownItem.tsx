@@ -47,7 +47,7 @@ export default function DropdownItem({
 
             {children && (
                 <Box flexGrow="6" flexShrink="1" flexBasis="auto">
-                    <Center w="full" h="full" fontWeight="bolder">
+                    <Center w="full" h="full" fontWeight="bolder" textAlign="center">
                         {children}
                     </Center>
                 </Box>

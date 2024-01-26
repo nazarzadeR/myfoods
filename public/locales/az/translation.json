@@ -1,0 +1,303 @@
+{
+    "words": {
+        "any": "Hamısı",
+        "dark": "Tünd",
+        "back": "Geri",
+        "home": "Əsas",
+        "diet": "Diet",
+        "meal": "yemək",
+        "dish": "yemək",
+        "next": "növbəti",
+        "send": "Göndər",
+        "light": "Açıq",
+        "theme": "Tema",
+        "upload": "Yükə",
+        "signOut": "Çıxış",
+        "google": "Google",
+        "language": "Dil",
+        "github": "Github",
+        "search": "Axtarış",
+        "login": "Daxil ol",
+        "profile": "Profil",
+        "cuisine": "Mətbəx",
+        "contact": "Əlaqə",
+        "magic": "Magic link",
+        "health": "sağlamlıq",
+        "ingredients": "Tərkib",
+        "readMore": "Ətraflı",
+        "facebook": "Facebook",
+        "favorite": "Favoritlər",
+        "settings": "Tənzimləmələr",
+        "chart(percents)": "Ümumi",
+        "pagMode": "Səhifə rejimi",
+        "moreSites": "Daha çox saytlar",
+        "loadMore": "Dahasını yüklə",
+        "chart(mg)": "Ərzaq maddələri",
+        "pagWithInfinity": "Davamlı Keçid",
+        "pagWithButton": "Buttonla səyfələmə",
+        "recipes_settings": "Yemək Tənzimləmələri",
+
+        "meals": {
+            "breakfast": "Səhər yeməyi",
+            "brunch": "Brunch",
+            "lunch": "Öğün",
+            "dinner": "Axşam yeməyi",
+            "snack": "Atıştırmalıq",
+            "teatime": "Çay vaxtı"
+        },
+        "diets": {
+            "balanced": "Balanslı",
+            "high-fiber": "Yüksek lifli",
+            "high-protein": "Yüksek proteinli",
+            "low-carb": "Aşağı karbohidratlı",
+            "low-fat": "Aşağı yağlı",
+            "low-sodium": "Aşağı sodalı"
+        },
+        "dishes": {
+            "alcohol cocktail": "Alkol kokteyli",
+            "biscuits and cookies": "Biskvit və qurabiscitlər",
+            "bread": "Çörək",
+            "cereals": "Qabıqlı naxışlar",
+            "condiments and sauces": "Qatıqlar və souslar",
+            "desserts": "Desertlər",
+            "drinks": "İçkilər",
+            "egg": "Yumurta",
+            "ice cream and custard": "Dondurma və krem",
+            "main course": "Əsas yemək",
+            "pancake": "Naxış",
+            "pasta": "Pasta",
+            "pastry": "Sürtkü şirniyyatı",
+            "pies and tarts": "Pirog və tartlar",
+            "pizza": "Pizza",
+            "preps": "Hazırlıq",
+            "preserve": "Saxlamaq",
+            "salad": "Salat",
+            "sandwiches": "Sendviçlər",
+            "seafood": "Dəniz məhsulları",
+            "side dish": "Qoşqar yemək",
+            "soup": "Şorba",
+            "starter": "Başlangıç",
+            "sweets": "Şirinliklər"
+        },
+        "healths": {
+            "alcohol-cocktail": "Alkoqol Kokteyli",
+            "alcohol-free": "Alkoqolsuz",
+            "celery-free": "Qerefil-Süzülmüş",
+            "crustacean-free": "Qabıqlılar-Süzülmüş",
+            "dairy-free": "Süd-Süzülmüş",
+            "DASH": "DASH",
+            "egg-free": "Yumurta-Süzülmüş",
+            "fish-free": "Balıq-Süzülmüş",
+            "fodmap-free": "FODMAP-Süzülmüş",
+            "gluten-free": "Qluten-Süzülmüş",
+            "immuno-supportive": "İmmuno-Dəstəkləyici",
+            "keto-friendly": "Keto-Məsləhətli",
+            "kidney-friendly": "Böyrün-Dostu",
+            "kosher": "Koşer",
+            "low-potassium": "Aşağı Kaliumlu",
+            "low-sugar": "Aşağı Şəkərli",
+            "lupine-free": "Lupin-Süzülmüş",
+            "Mediterranean": "Mediterranean",
+            "mollusk-free": "Mollusk-Süzülmüş",
+            "mustard-free": "Hardal-Süzülmüş",
+            "No-oil-added": "Yağ Əlavə Olunmayan",
+            "paleo": "Paleo",
+            "peanut-free": "Fındıq-Süzülmüş",
+            "pescatarian": "Peskatarian",
+            "pork-free": "Donuz Ətindən Məhrum",
+            "red-meat-free": "Qırmızı Ət-Süzülmüş",
+            "sesame-free": "Susam-Süzülmüş",
+            "shellfish-free": "Qabıqlılar-Süzülmüş",
+            "soy-free": "Soya-Süzülmüş",
+            "sugar-conscious": "Şəkər-Məsləhətli",
+            "sulfite-free": "Sülfid-Süzülmüş",
+            "tree-nut-free": "Ağ Əvdən Məhrum",
+            "vegan": "Veqan",
+            "vegetarian": "Vegetarian",
+            "wheat-free": "Buğda-Süzülmüş",
+            "pecatarian": "Peskatarian"
+        },
+        "cuisines": {
+            "american": "Amerikan",
+            "asian": "Asiya",
+            "british": "Britaniya",
+            "caribbean": "Karib",
+            "central europe": "Mərkəzi Avropa",
+            "chinese": "Çin",
+            "eastern europe": "Şərq Avropa",
+            "french": "Fransız",
+            "greek": "Yunan",
+            "indian": "Hind",
+            "italian": "İtalyan",
+            "japanese": "Yapon",
+            "world": "Dünya",
+            "korean": "Koreya",
+            "kosher": "Koşer",
+            "mediterranean": "Mediterranean",
+            "mexican": "Meksika",
+            "middle eastern": "Orta Şərq",
+            "nordic": "Nordik",
+            "south american": "Cənub Amerika",
+            "south east asian": "Cənub Şərq Asiya"
+        }
+    },
+    "expressions": {
+        "tagList": "Tagları buraya daxil edin",
+        "lastSeenDate": "son giriş $",
+        "noTags": "Bu reseptlər üçün heçbir etiket yoxdur",
+        "backToLogin": "Giriş səhifəsinə qayıt",
+        "saveRecipeSetting": "Buluta saxla",
+        "meal": "Səvimli yeməyiniz nədir?",
+        "calories": "$ ila * kcal arasında kalori",
+        "needAuth": "Bu səhifə üçün giriş tələb olunur",
+        "diet": "Hansı növ diet izləyirsiniz?",
+        "userPicNeeded": "Bu üçün şəkil faylı lazımdır",
+        "health": "Sağlamlığınıza nə üçün üstünlük verirsiniz?",
+        "dish": "Sevdiyiniz xüsusi yeməklər var?",
+        "noResponse": "Hələ axtarış etməmisiniz.",
+        "noHits": "Axtarışda heçbir resept tapılmadı",
+        "unauthorized": "Bu səhifəyə giriş üçün hesaba daxil olamnız tələb olunur",
+        "cuisine": "Sevimli mətbəx növləriniz hansılardır?",
+        "overload": "Serveri aşırı yüklədiniz, bir dəqiqə gözləyin.",
+        "searchStringRequired": "Heç bir söz olmadan heç nə axtarış etməmisiniz",
+        "searchStringNotSafe": "Yalnız cümlələr və sözlər qəbul edilir",
+        "underDevelopment": "Bu səhifə inkişaf etdirilir",
+        "userPicTypeNotSupported": "Bu fayl növü dəstəklənmir.",
+        "tagListHeader": "Reseptiniz üçün etiketlərinizi daxil edin.",
+        "userFileSizeOverload": "Fayl ölçüsü maksimum 4 MB olmalıdır."
+    },
+
+    "auth": {
+        "title": {
+            "login": "Giriş",
+            "magic": "Email ilə giriş",
+            "register": "Qeydiyyat"
+        },
+        "link": {
+            "login": "Hesabınız yoxdur?",
+            "register": "Hesabınız var?"
+        },
+        "action": {
+            "login": "Giriş",
+            "register": "Qeydiyyat"
+        },
+        "magicLink": {
+            "info": "Hesabınıza əlaqəli email ünvanını daxil edin, və biz sizin inboxunuza bir link göndərəcəyik"
+        },
+        "resetPass": {
+            "info": "Şifrənizi yeniləmək üçün, email ünvanınızı daxil edin."
+        },
+        "username": {
+            "hint": "İstifadəçi adınızı daxil edin",
+            "error": {
+                "required": "İstifadəçi adı tələb olunur"
+            }
+        },
+        "password": {
+            "hint": "Şifrənizi daxil edin",
+            "error": {
+                "required": "Şifrə tələb olunur",
+                "min": "Ən az $ simvol uzunluğunda olmalıdır",
+                "match": "Şifrə sahəsi ən az bir dəfə böyük və rəqəmli simvollarla istifadə edilməlidir."
+            }
+        },
+        "email": {
+            "hint": "Email ünvanınızı daxil edin",
+            "error": {
+                "required": "Email ünvanı doldurulmalıdır",
+                "notMatches": "Siz düzgün email ünvanı daxil etməmisiniz kimi görünür."
+            }
+        },
+        "confirm": {
+            "hint": "Şifrəni təsdiqləyin",
+            "error": {
+                "required": "Şifrə təsdiqlənməlidir",
+                "same": "Təsdiq sahəsi şifrə ilə eyni olmalıdır"
+            }
+        }
+    },
+    "home": {
+        "nothingSearched": "Siz hələ axtarış etməmisiniz."
+    },
+    "sign": {
+        "head": {
+            "login": "Xoş gəlmisiniz",
+            "register": "Salamlama",
+            "forgotPass": "Şifrəni yenilə"
+        },
+        "info": {
+            "other": {
+                "head": "Giriş növünü seçin",
+                "magic": {
+                    "head": "Email ilə giriş",
+                    "body": "Hesabınıza əlaqələnmiş email ünvanınızı daxil edin və biz sizin inboxunuza bir sihirli keçid göndərəcəyik."
+                }
+            }
+        },
+        "button": {
+            "login": "Giriş",
+            "register": "Qeydiyyat",
+            "reset": "Şifrəmi yenilə",
+            "magic": "Sihirli keçid göndər"
+        },
+        
+        "link": {
+            "magic": "Qayıda",
+            "goLogin": "Girişə qayıt",
+            "otherWays": "Digər yollar",
+            "login": "Hesabınız yoxdur?",
+            "forgot": "Şifrəni unutdunuz?",
+            "register": "Hesabınız var?"
+        }
+    },
+    "contact": {
+        "title": "Mənimlə əlaqə saxlayın",
+        "button": "Mesaj göndər",
+        "email": {
+            "hint": "Email ünvanınızı buraya daxil edin",
+            "errors": {
+                "email": "Sizinlə əlaqə qurulmazsa, email ünvanı düzgün deyilsə",
+                "required": "Sizinlə email ünvanınıza cavab vermək istəyirəm."
+            }
+        },
+        "username": {
+            "hint": "Adınızı buraya daxil edin",
+            "errors": {
+                "required": "Sizinlə əlaqə qurduğumda adınızı bilmək istəyərdim"
+            }
+        },
+        "message": {
+            "hint": "Mesajınızı buraya daxil edin",
+            "errors": {
+                "required": "Sizinlə əlaqə qurduğumda mesajınızı bilmək istəyərdim."
+            }
+        }
+    },
+    "errors": {
+        "CORS_ERROR": "Cors problemi baş verdi",
+        "INVALID_CREDENTIAL": "Məlumatlar yanlışdır",
+        "SOMETHING_GONE_WRONG": "Naməlum səhv baş verdi",
+        "EMAIL_IN_USE": "Email artıq istifadə olunur, başqa birini sınayın",
+        "EMAIL_UPDATE_NEED_VERIFY": "Sizə göndərilən təsdiq linkini təsdiqləyin",
+        "POPUP_CLOSED_BY_USER": "Əgər bunu sevmirsinizsə, başqa birini sınayın",
+        "EMAIL_LINK_QUOTA_EXCEEDED": "Çox sayda sorğu etdiniz, günlük limit aşıldı. Zəhmət olmasa başqa bir seçimi sınayın",
+        "TO_MANY_REQUEST_TO_RECIPES": "Bir dəqiqə ərzində çox sorğu göndərdiniz, limit aşıldı, zəhmət olmasa bir dəqiqə gözləyin"
+    },
+    "success": {
+        "EMAIL_CHANGED": "Email uğurla dəyişdirildi",
+        "USERNAME_CHANGED": "İstifadəçi adı uğurla dəyişdirildi",
+        "ADDED_TO_FAVORITES": "Recept seçilənlərə əlavə edildi",
+        "RECIPE_ADDED_TO_CLOUD": "Cari quraşdırmalar buluta əlavə edildi",
+        "PROFILE_PIC_UPLOAD_SUCCESSFULLY": "Profil şəkli uğurla yükləndi",
+        "EMAIL_LINK_SENDED" : {
+            "TOAST": "Email linkiniz email adresinə göndərildi. Zəhmət olmasa emailinizi yoxlayın",
+            "TITLE": "Email linki göndərildi",
+            "DESCRIPTION": "Email linki göndərildi, emailinizi yoxlayın və myfoods tərəfindən göndərilən linkə klikləyin. Əgər email almazsanız, xahiş edirəm bir daha göndərin və emailinizi iki dəfə yoxlayın."
+        },
+        "RESET_PASS_SENDED" : {
+            "TOAST": "Reset linkiniz email adresinə göndərildi. Zəhmət olmasa emailinizi yoxlayın",
+            "TITLE": "Şifrəni yeniləmək üçün email göndərildi",
+            "DESCRIPTION": "Reset emaili göndərildi, emailinizi yoxlayın və myfoods tərəfindən göndərilən linkə klikləyin. Əgər email almazsanız, xahiş edirəm bir daha göndərin və emailinizi iki dəfə yoxlayın."
+        }
+    }
+}

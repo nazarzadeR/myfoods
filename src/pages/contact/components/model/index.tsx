@@ -1,31 +1,38 @@
-import { Suspense } from "react";
+import { Suspense, lazy } from "react";
 import { Canvas } from "@react-three/fiber";
-import { PerspectiveCamera, OrbitControls } from "@react-three/drei";
+import { PerspectiveCamera, OrbitControls, Float } from "@react-three/drei";
 
-import Rocket from "./components/Rocket";
+import Progress from "./components/Progress";
+
+const Rocket = lazy(() => import("./components/Rocket"));
 
 export default function RocketModel() {
     return (
         <Suspense fallback={null}>
             <Canvas shadows>
                 <OrbitControls
-                    maxPolarAngle={1.5}
                     minZoom={0}
-                    enableZoom={true}
                     zoom0={3}
                     maxZoom={2}
+                    enableZoom={true}
+                    maxPolarAngle={1.5}
                 />
-                <directionalLight intensity={2.5} position={[1, 4, -2]} />
+                <directionalLight intensity={3.5}  position={[1, 4, -2]} />
                 <PerspectiveCamera
                     fov={60}
                     makeDefault
                     position={[5, -10, 0]}
                 />
-                <Rocket
-                    scale={[1.3, 1.3, 1.3]}
-                    position={[0, 3.5, 0]}
-                    rotation-y={1.5}
-                />
+                <Float floatIntensity={4} rotationIntensity={2}>
+                    <Suspense fallback={<Progress />}>
+                        <Rocket
+                            rotation-y={1.5}
+                            position={[0, 3.5, 0]}
+                            scale={[1.3, 1.3, 1.3]}
+                        />
+                    </Suspense>
+                </Float>
+
             </Canvas>
         </Suspense>
     );
