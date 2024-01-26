@@ -4,6 +4,9 @@ import { HStack, Box, StackProps } from "@chakra-ui/react";
 
 import { useUtil } from "@/store";
 
+// @ts-ignore
+const AnimatedMain = motion(HStack);
+
 export default function MainLayout({
     children,
     ...rest
@@ -23,13 +26,13 @@ export default function MainLayout({
             variants={mobileNavbarVariants}
             animate={isNavbarOpen ? "open" : "close"}
         >
-            <HStack
+            <AnimatedMain
                 w="full"
                 h="full"
                 mx="auto"
                 ref={ref}
+                as="main"
                 flexDir="column"
-                as={motion.main}
                 overflowY="scroll"
                 maxW="container.xl"
                 sx={mainLayoutScrollSX}
@@ -38,7 +41,7 @@ export default function MainLayout({
                 {...rest}
             >
                 {children && children}
-            </HStack>
+            </AnimatedMain>
         </Box>
     );
 }

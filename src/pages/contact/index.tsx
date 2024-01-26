@@ -1,9 +1,5 @@
-import { useRedirect } from "@/hooks";
+import Model from "./components/model";
 
 export default function Contact() {
-    useRedirect({
-        instant: true,
-        where: "/under_development",
-    });
-    return <div>Contact</div>;
+    return <Model />;
 }

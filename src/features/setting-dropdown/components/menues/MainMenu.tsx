@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 
 import { signOutAuth } from "@/services/firebase";
 import { useAuth, useUtility } from "@/contexts";
@@ -22,7 +22,10 @@ export default function MainMenu({ isActive, setMenu, setActiveMenu }: Props) {
     const navigate = useNavigate();
     const { hasUser } = useAuth();
     const { t } = useTranslation();
+    const { pathname } = useLocation();
     const { profileActions } = useUtility();
+
+    const isLoginPage = pathname === "/sign";
 
     const goToSignPage = () => navigate("/sign");
     const goToSettings = () => setMenu(() => "SETTINGS");
@@ -42,7 +45,7 @@ export default function MainMenu({ isActive, setMenu, setActiveMenu }: Props) {
                 {t("words.settings")}
             </Dropdown.Item>
 
-            {!hasUser ? (
+            {!hasUser && !isLoginPage ? (
                 <Dropdown.Item LeftIcon={LoginIcon} onClick={goToSignPage}>
                     {t("words.login")}
                 </Dropdown.Item>

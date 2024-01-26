@@ -33,7 +33,12 @@ export default function RecipesSettingModal(props: Props) {
             }}
         >
             <ModalOverlay />
-            <ModalContent>
+            <ModalContent
+                bg={{
+                    base: "chakra-body-bg",
+                    sm: "chakra-subtle-bg",
+                }}
+            >
                 <ModalCloseButton />
                 <ModalHeader>
                     <Center w="full" h="full">

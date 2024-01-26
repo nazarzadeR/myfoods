@@ -9,7 +9,7 @@ export default function NothingSearched() {
     return (
         <VStack w="full" h="full">
             <Center as={VStack} w="full" h="full">
-                <Center w="full">
+                <Center w="full" transform="translateY(-60px)">
                     <Box
                         as={Lottie}
                         maxW="600px"

@@ -14,6 +14,8 @@ type Props = TDetailedProps<
     StackProps
 >;
 
+const AnimatedVStack = motion(VStack);
+
 export default function DropDownMenu({
     children,
     animate = "to",
@@ -26,16 +28,15 @@ export default function DropDownMenu({
     return (
         <AnimatePresence initial={false} onExitComplete={() => setActiveMenu()}>
             {isActive && (
-                <VStack
+                <AnimatedVStack
                     exit={exit}
-                    as={motion.div}
                     initial={initial}
                     animate={animate}
                     variants={dropdownAnimation}
                     {...rest}
                 >
                     {children && children}
-                </VStack>
+                </AnimatedVStack>
             )}
         </AnimatePresence>
     );

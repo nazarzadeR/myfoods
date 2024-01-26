@@ -9,7 +9,7 @@ export default function NotHits() {
     return (
         <VStack w="full" h="full">
             <Center as={VStack} w="full" h="full">
-                <Center w="full">
+                <Center w="full" transform="translateY(-60px)">
                     <Box
                         as={Lottie}
                         maxW="400px"
