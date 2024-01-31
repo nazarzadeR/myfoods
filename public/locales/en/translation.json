@@ -185,7 +185,7 @@
             "register": "Register"
         },
         "magicLink": {
-            "info": "Enter the email address associated with your account, and we'll send a magic link to your inbox"
+            "info": "To reset your password, please enter your email address."
         },
         "resetPass": {
             "info": "Enter your new password to regain access and strengthen the security of your account. "
@@ -263,6 +263,7 @@
     "contact": {
         "title": "Contact me",
         "button": "Send Message",
+        "singedHelper": "What's your message?",
         "email": {
             "hint": "your email goes here",
             "errors": {
@@ -299,6 +300,7 @@
         "ADDED_TO_FAVORITES": "Recipe added to favorites",
         "RECIPE_ADDED_TO_CLOUD": "Current settings added to cloud",
         "PROFILE_PIC_UPLOAD_SUCCESSFULLY": "Profile picture uploaded",
+        "EMAILJS_EMAIL_SENDED": "Email sended successfully, thanks",
         "EMAIL_LINK_SENDED" : {
             "TOAST": "Email link send your email. Check your email, please",
             "TITLE": "Email link sended",

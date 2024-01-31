@@ -251,8 +251,9 @@
         }
     },
     "contact": {
-        "title": "Mənimlə əlaqə saxlayın",
         "button": "Mesaj göndər",
+        "title": "Mənimlə əlaqə saxlayın",
+        "singedHelper": "Sizin mesajınız nədir?",
         "email": {
             "hint": "Email ünvanınızı buraya daxil edin",
             "errors": {
@@ -289,6 +290,7 @@
         "ADDED_TO_FAVORITES": "Recept seçilənlərə əlavə edildi",
         "RECIPE_ADDED_TO_CLOUD": "Cari quraşdırmalar buluta əlavə edildi",
         "PROFILE_PIC_UPLOAD_SUCCESSFULLY": "Profil şəkli uğurla yükləndi",
+        "EMAILJS_EMAIL_SENDED": "Elektron məktub uğurla göndərildi, təşəkkürlər",
         "EMAIL_LINK_SENDED" : {
             "TOAST": "Email linkiniz email adresinə göndərildi. Zəhmət olmasa emailinizi yoxlayın",
             "TITLE": "Email linki göndərildi",

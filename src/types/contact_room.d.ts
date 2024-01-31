@@ -1,0 +1,96 @@
+declare namespace ContactRoom {
+    type GLTFResult<T> = T & {
+        nodes: Nodes;
+        materials: Materials;
+        animations: Animations;
+    };
+
+    type Nodes = {
+        walls: THREE.Mesh;
+        floor_trim: THREE.Mesh;
+        self: THREE.Mesh;
+        self_handler_bottom: THREE.Mesh;
+        self_handler_middle: THREE.Mesh;
+        self_handler_top: THREE.Mesh;
+        Cube023: THREE.Mesh;
+        Cube023_1: THREE.Mesh;
+        monitor_handler_vertical: THREE.Mesh;
+        monitor_handler: THREE.Mesh;
+        legs: THREE.Mesh;
+        monitor: THREE.Mesh;
+        myfood_image: THREE.Mesh;
+        table: THREE.Mesh;
+        ["case"]: THREE.Mesh;
+        speaker_right: THREE.Mesh;
+        speaker_button_left: THREE.Mesh;
+        speaker_button_right: THREE.Mesh;
+        speaker_open_close_button: THREE.Mesh;
+        speaker_left: THREE.Mesh;
+        Plane001: THREE.Mesh;
+        Plane001_1: THREE.Mesh;
+        keyboard: THREE.Mesh;
+        keyboard_key: THREE.Mesh;
+        mouse: THREE.Mesh;
+        mouse_pad: THREE.Mesh;
+        scorpion_seconds: THREE.Mesh;
+        Clock: THREE.Mesh;
+        clock_inner: THREE.Mesh;
+        scorpion_hour: THREE.Mesh;
+        scorpion_minute: THREE.Mesh;
+        twitter_link: THREE.Mesh;
+        twitter_icon: THREE.Mesh;
+        github_link: THREE.Mesh;
+        github_icon: THREE.Mesh;
+        linkedin_link: THREE.Mesh;
+        linkedin_icon: THREE.Mesh;
+        Curve002: THREE.Mesh;
+        linkedin_icon_n: THREE.Mesh;
+        youtube_link: THREE.Mesh;
+        youtube_icon: THREE.Mesh;
+        youtube_icon_play_button: THREE.Mesh;
+        fintlab_link: THREE.Mesh;
+        fintlab_icon: THREE.Mesh;
+        facebook_link: THREE.Mesh;
+        facebook_icon: THREE.Mesh;
+        instagram_link: THREE.Mesh;
+        instagram_icon: THREE.Mesh;
+        instagram_inner: THREE.Mesh;
+        bed: THREE.Mesh;
+        bed_legs: THREE.Mesh;
+        bed_head: THREE.Mesh;
+        pillow: THREE.Mesh;
+        bed_back: THREE.Mesh;
+        blanket: THREE.Mesh;
+    };
+
+    type Materials = {
+        wall: THREE.MeshStandardMaterial;
+        floor_trim: THREE.MeshStandardMaterial;
+        self: THREE.MeshStandardMaterial;
+        self_handlers: THREE.MeshStandardMaterial;
+        youtube_hexagon: THREE.MeshStandardMaterial;
+        daltonlar: THREE.MeshStandardMaterial;
+        chair: THREE.MeshStandardMaterial;
+        bed: THREE.MeshStandardMaterial;
+        ["case"]: THREE.MeshStandardMaterial;
+        myfood_image: THREE.MeshStandardMaterial;
+        text: THREE.MeshStandardMaterial;
+        keyboard: THREE.MeshStandardMaterial;
+        time: THREE.MeshStandardMaterial;
+        mouse_pad: THREE.MeshStandardMaterial;
+        clock: THREE.MeshStandardMaterial;
+        twitter_hexagn: THREE.MeshStandardMaterial;
+        twitter: THREE.MeshStandardMaterial;
+        github: THREE.MeshStandardMaterial;
+        linkedin: THREE.MeshStandardMaterial;
+        youtube_color: THREE.MeshStandardMaterial;
+        fintlab: THREE.MeshStandardMaterial;
+        facebook: THREE.MeshStandardMaterial;
+        intagram: THREE.MeshStandardMaterial;
+        bed_legs: THREE.MeshStandardMaterial;
+        pillow: THREE.MeshStandardMaterial;
+        material: THREE.MeshStandardMaterial;
+    };
+
+    type Animations = any[];
+}
