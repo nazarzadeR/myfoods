@@ -36,7 +36,7 @@ export default function ContactRoomEnvironmentProvider({
                 <ContactRoomLayout
                     camera={{
                         fov: 50,
-                        position: [6.5, 4.5, 12.5],
+                        position: [6.5, 4.5, 13],
                     }}
                     {...rest}
                 >

@@ -7,9 +7,9 @@ export default function Contact() {
     return (
         <Flex
             mx="2"
-            position="relative"
-            w="full"
             h="full"
+            w="full"
+            position="relative"
             alignContent="center"
         >
             <Center w={{ base: "full", lg: "40%" }}>
