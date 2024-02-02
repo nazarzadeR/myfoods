@@ -5,13 +5,7 @@ import ContactForm from "./components/contact-forms";
 
 export default function Contact() {
     return (
-        <Flex
-            mx="2"
-            h="full"
-            w="full"
-            position="relative"
-            alignContent="center"
-        >
+        <Flex h="full" w="full" position="relative" alignContent="center">
             <Center w={{ base: "full", lg: "40%" }}>
                 <ContactForm />
             </Center>
