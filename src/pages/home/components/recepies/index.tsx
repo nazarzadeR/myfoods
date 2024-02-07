@@ -25,8 +25,8 @@ export default function Recipes() {
 
     return (
         <SelectedRecipeProvider>
-            {map(hits, (hit, idx) => (
-                <Card key={idx} hit={hit} />
+            {map(hits, ({ recipe }, idx) => (
+                <Card key={idx} recipe={recipe} />
             ))}
             <Pagination />
             <SelectedRecipeModal />

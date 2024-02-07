@@ -14,9 +14,9 @@ export default function ContentRoom() {
     return (
         <Environment>
             <directionalLight
+                castShadow
                 intensity={6.5}
                 position={[2.1, 1.3, 1.5]}
-                castShadow
             />
 
             <CameraControls

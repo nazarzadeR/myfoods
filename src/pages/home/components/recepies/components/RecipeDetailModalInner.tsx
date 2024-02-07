@@ -7,13 +7,17 @@ import { useAuth } from "@/contexts";
 
 type Props = TProps<{
     recipe: Recipe.TRecipe;
+    favoriteCard?: boolean;
 }>;
 
-export default function RecipeDetailModalInner({ recipe }: Props) {
+export default function RecipeDetailModalInner({
+    recipe,
+    favoriteCard,
+}: Props) {
     const { hasUser } = useAuth();
     return (
         <VStack position="relative" bg="bgDark" borderRadius="md">
-            {hasUser && <QuickAddFavorite recipe={recipe} />}
+            {hasUser && !favoriteCard && <QuickAddFavorite recipe={recipe} />}
 
             <Image
                 w="full"

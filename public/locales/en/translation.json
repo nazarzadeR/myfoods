@@ -157,6 +157,7 @@
         "dish": "Are there specific dishes you love?",
         "noResponse": "You have not been searching yet.",
         "noHits": "No recipes found in the current search",
+        "noFavorites": "You have not favorite recipes yet.",
         "unauthorized": "This page requires you to log in",
         "cuisine": "What are your favorite types of cuisine?",
         "overload": "You overload the server just wait 1 minute.",

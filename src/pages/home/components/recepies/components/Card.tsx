@@ -5,10 +5,10 @@ import { useSelectedRecipe } from "../context/SelectedRecipeContext";
 import { useState } from "react";
 
 type Props = TProps<{
-    hit: Recipe.THit;
+    recipe: Recipe.TRecipe;
 }>;
 
-export default function Card({ hit: { recipe } }: Props) {
+export default function Card({ recipe }: Props) {
     const { setSelected } = useSelectedRecipe();
     const [loaded, setLoaded] = useState(false);
 
@@ -35,6 +35,9 @@ export default function Card({ hit: { recipe } }: Props) {
                         borderRadius="base"
                         onClick={onClickHandle}
                         onLoad={handleImageLoad}
+                        onError={() =>
+                            console.log("Something happened when image loading")
+                        }
                     />
                 </Skeleton>
             </Box>

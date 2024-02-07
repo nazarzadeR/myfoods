@@ -1,11 +1,11 @@
-import { useContactRoomEnvironment } from "@/pages/contact/context/ContactRoomEnvironmentContext";
-
 import Bed from "./Bed";
 import Shelf from "./Shelf";
 import Links from "./links";
 import Desktop from "./Desktop";
+import BookShelf from "./BookShelf";
 import FocusToHome from "./FocusToRoom";
 import FocusToLinks from "./FocusToLinks";
+import { useContactRoomEnvironment } from "@/pages/contact/context/ContactRoomEnvironmentContext";
 
 type Props = TProps<JSX.IntrinsicElements["group"]>;
 
@@ -31,7 +31,7 @@ export default function Room(props: Props) {
             <Bed />
             <Links />
             <Desktop />
-
+            <BookShelf />
             <FocusToHome />
             <FocusToLinks />
         </group>

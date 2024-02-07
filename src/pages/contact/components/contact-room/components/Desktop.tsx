@@ -1,7 +1,29 @@
+import gsap from "gsap";
+import { useRef } from "react";
+
+import useHoverElement from "../hooks/useHoverElement";
 import { useContactRoomEnvironment } from "@/pages/contact/context/ContactRoomEnvironmentContext";
 
 export default function Desktop() {
+    const chairRef = useRef<THREE.Group>(null);
     const { contactRoom } = useContactRoomEnvironment();
+    const { onExit, onEnter } = useHoverElement();
+
+    const handleClick = () => {
+        if (chairRef.current) {
+            gsap.fromTo(
+                chairRef.current.rotation,
+                {
+                    y: 1.361,
+                },
+                {
+                    duration: 1,
+                    y: () => 6 + 1.361,
+                },
+            );
+        }
+    };
+
     return (
         <>
             <mesh
@@ -91,6 +113,10 @@ export default function Desktop() {
                 geometry={contactRoom?.nodes.speaker_left.geometry}
             />
             <group
+                ref={chairRef}
+                onClick={handleClick}
+                onPointerEnter={onEnter}
+                onPointerLeave={onExit}
                 rotation={[0, 1.361, 0]}
                 scale={[0.442, 0.442, 0.322]}
                 position={[-3.692, 1.061, 5.181]}

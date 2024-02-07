@@ -5,7 +5,11 @@ import { Box, Center } from "@chakra-ui/react";
 import SelectedRecipeModalInner from "./RecipeDetailModalInner";
 import { useSelectedRecipe } from "../context/SelectedRecipeContext";
 
-export default function RecipeDetailedModal() {
+type Props = TProps<{
+    favoriteCard?: boolean;
+}>;
+
+export default function RecipeDetailedModal({ favoriteCard }: Props) {
     const { selected, setSelected } = useSelectedRecipe();
 
     const isOpen = !isEmpty(selected);
@@ -43,7 +47,10 @@ export default function RecipeDetailedModal() {
                             bg="var(--chakra-colors-chakra-body-bg)"
                         >
                             <Box w="full" borderRadius="md">
-                                <SelectedRecipeModalInner recipe={selected} />
+                                <SelectedRecipeModalInner
+                                    favoriteCard={favoriteCard}
+                                    recipe={selected}
+                                />
                             </Box>
                         </Box>
                     </Center>

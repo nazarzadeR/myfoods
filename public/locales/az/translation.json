@@ -156,6 +156,7 @@
         "dish": "Sevdiyiniz xüsusi yeməklər var?",
         "noResponse": "Hələ axtarış etməmisiniz.",
         "noHits": "Axtarışda heçbir resept tapılmadı",
+        "noFavorites": "Favoritlərinizdə heç bir resept yoxdur",
         "unauthorized": "Bu səhifəyə giriş üçün hesaba daxil olamnız tələb olunur",
         "cuisine": "Sevimli mətbəx növləriniz hansılardır?",
         "overload": "Serveri aşırı yüklədiniz, bir dəqiqə gözləyin.",

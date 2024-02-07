@@ -36,6 +36,8 @@ const USERS_DATA_REF = collection(db, "users_meta_data");
 const USER_PROFILE_PIC_REF = (id: string) =>
     ref(storage, `profile-images/${id}`);
 
+export const getUserMetaData = (uid: string) => doc(USERS_DATA_REF, uid);
+
 // const USER_RECIPE_PIC_REF = (uid: string, id: string) =>
 //     ref(storage, `user-recipe-images/${uid}/${id}`);
 
