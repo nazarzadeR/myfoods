@@ -16,7 +16,6 @@ export default function useFavorite() {
 
     useEffect(() => {
         const unSub = onSnapshot(getUserMetaData(user?.uid!), (doc) => {
-            console.log(doc.data());
             const favoritesData = doc.data() as TFavorites;
 
             if (isEmpty(favoritesData.favorites)) return;

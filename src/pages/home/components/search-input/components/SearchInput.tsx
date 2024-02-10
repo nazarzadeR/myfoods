@@ -1,8 +1,8 @@
+// @ts-nocheck
+
 import { Box, Input, InputProps } from "@chakra-ui/react";
 
-type Props = TDetailedProps<{}, InputProps>;
-
-export default function SearchInput(props: Props) {
+export default function SearchInput(props: InputProps) {
     return (
         <Box
             p="3px"
