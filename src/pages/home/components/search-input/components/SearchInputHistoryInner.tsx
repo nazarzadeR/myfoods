@@ -19,7 +19,6 @@ export default function SearchInputHistoryInner({ setQuery }: Props) {
             left="0"
             top="70px"
             bg="bgDark"
-            minH="120px"
             maxW="320px"
             minW="280px"
             maxH="240px"
@@ -27,6 +26,7 @@ export default function SearchInputHistoryInner({ setQuery }: Props) {
             zIndex="popover"
             borderRadius="4px"
             position="absolute"
+          
             sx={{
                 "::-webkit-scrollbar": {
                     display: "none",
@@ -58,14 +58,16 @@ function History({ history, setQuery }: HistoryProps) {
             h="50px"
             cursor="pointer"
             onClick={setHistory}
-            borderRadius="5px"
-            justifyContent="space-between"
             alignContent="center"
+            justifyContent="space-between"
+            _even={{ bg: "chakra-body-bg" }}
+            _hover={{
+                bg: "teal.700",
+            }}
         >
             <Text>{history}</Text>
 
             <CloseButton
-                bg="bgDark"
                 aria-label="delete history"
                 onClick={handleDeleteHistory}
             />

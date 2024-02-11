@@ -11,8 +11,17 @@ type Props = TProps<{
 export default function Card({ recipe }: Props) {
     const { setSelected } = useSelectedRecipe();
     const [loaded, setLoaded] = useState(false);
+    const [hasError, setHasError] = useState(false);
+
+    const imageUrl = hasError
+        ? "/images/fallback_recipe_image.jfif"
+        : recipe.image;
 
     const onClickHandle = () => setSelected(recipe);
+    const handleImageError = () => {
+        setLoaded(true);
+        setHasError(true);
+    };
     const handleImageLoad = () => {
         setLoaded(true);
     };
@@ -30,14 +39,12 @@ export default function Card({ recipe }: Props) {
                         w="full"
                         h="full"
                         loading="lazy"
-                        src={recipe.image}
+                        src={imageUrl}
                         alt={recipe.label}
                         borderRadius="base"
                         onClick={onClickHandle}
                         onLoad={handleImageLoad}
-                        onError={() =>
-                            console.log("Something happened when image loading")
-                        }
+                        onError={handleImageError}
                     />
                 </Skeleton>
             </Box>

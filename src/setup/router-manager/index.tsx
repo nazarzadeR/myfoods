@@ -6,6 +6,7 @@ import { DynamicLoader } from "@/components";
 import RequiredAuthLayout from "@/layouts/required-auth";
 
 const Home = lazy(() => import("@/pages/home"));
+const Recipe = lazy(() => import("@/pages/recipe"));
 const Contact = lazy(() => import("@/pages/contact"));
 const NotFound = lazy(() => import("@/pages/not-found"));
 const Favorites = lazy(() => import("@/pages/favorites"));
@@ -47,6 +48,11 @@ export default function RouterManager() {
             <Route
                 path="/contact"
                 element={<DynamicLoader comp={<Contact />} />}
+            />
+
+            <Route
+                path="/recipe/:name"
+                element={<DynamicLoader comp={<Recipe />} />}
             />
 
             <Route path="/favorites" element={<RequiredAuthLayout />}>

@@ -1,4 +1,5 @@
 import { nanoid } from "nanoid";
+import { useState } from "react";
 import { VStack, Image, Heading, Text } from "@chakra-ui/react";
 
 import RecipeButton from "./RecipeDetailedButton";
@@ -15,17 +16,27 @@ export default function RecipeDetailModalInner({
     favoriteCard,
 }: Props) {
     const { hasUser } = useAuth();
+    const [hasError, setError] = useState(false);
+
+
+    const imageUrl = hasError ? "/images/fallback_recipe_image.jfif" : recipe.image
+
+    const handleError = () => {
+        setError(() => true)
+    }
+      
     return (
         <VStack position="relative" bg="bgDark" borderRadius="md">
             {hasUser && !favoriteCard && <QuickAddFavorite recipe={recipe} />}
 
             <Image
                 w="full"
-                boxSize="full"
                 maxH="290px"
-                src={recipe.image}
+                src={imageUrl}
+                boxSize="full"
                 alt={recipe.label}
                 borderTopRadius="md"
+                onError={handleError}
             />
 
             <VStack w="full" borderRadius="base" justifyContent="space-between">

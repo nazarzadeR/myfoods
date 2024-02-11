@@ -134,10 +134,11 @@ export default function BookShelf() {
                 </mesh>
             </group>
             <mesh
-                geometry={contactRoom?.nodes.cactus_cup.geometry}
-                material={contactRoom?.materials.cactus_cup}
-                position={[-5.583, 4.264, 3.488]}
                 scale={0.147}
+                rotation={[0,-0.7,0]}
+                position={[-5.583, 4.264, 3.488]}
+                material={contactRoom?.materials.cactus_cup}
+                geometry={contactRoom?.nodes.cactus_cup.geometry}
             >
                 <mesh
                     geometry={contactRoom?.nodes.cactus.geometry}
