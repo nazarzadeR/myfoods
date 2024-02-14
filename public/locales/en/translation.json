@@ -299,6 +299,7 @@
         "EMAIL_CHANGED": "Email changed successfully",
         "USERNAME_CHANGED": "Username changed successfully",
         "ADDED_TO_FAVORITES": "Recipe added to favorites",
+        "REMOVED_FROM_FAVORITES": "Recipe removed from favorites",
         "RECIPE_ADDED_TO_CLOUD": "Current settings added to cloud",
         "PROFILE_PIC_UPLOAD_SUCCESSFULLY": "Profile picture uploaded",
         "EMAILJS_EMAIL_SENDED": "Email sended successfully, thanks",

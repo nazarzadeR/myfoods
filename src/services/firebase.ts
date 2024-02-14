@@ -23,6 +23,7 @@ import {
     getDoc,
     collection,
     arrayUnion,
+    arrayRemove,
 } from "firebase/firestore";
 
 import { auth, db, storage } from "@/lib/firebase";
@@ -86,6 +87,19 @@ export async function addRecipeToFavoriteFirebase(
         doc(USERS_DATA_REF, uid),
         {
             favorites: arrayUnion(recipe),
+        },
+        { merge: true },
+    );
+}
+
+export async function removeRecipeToFavoriteFirebase(
+    uid: string,
+    recipe: Recipe.TRecipe,
+) {
+    return setDoc(
+        doc(USERS_DATA_REF, uid),
+        {
+            favorites: arrayRemove(recipe),
         },
         { merge: true },
     );

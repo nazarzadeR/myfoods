@@ -14,6 +14,7 @@ export { default as LoginIcon } from "./Login";
 export { default as ThemeIcon } from "./Theme";
 export { default as MagicIcon } from "./Magic";
 export { default as GithubIcon } from "./Github";
+export { default as DeleteIcon } from "./Delete";
 export { default as GoogleIcon } from "./Google";
 export { default as ReturnIcon } from "./Return";
 export { default as ProfileIcon } from "./Profile";

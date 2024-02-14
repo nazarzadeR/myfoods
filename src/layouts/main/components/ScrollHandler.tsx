@@ -15,14 +15,6 @@ export default function ScrollHandler({ scroll, container }: Props) {
         container.current?.scrollHeight! >= 2000;
     const pos = isBiggerThan1000 ? "top" : "bottom";
 
-    console.log({
-        pos,
-        scroll,
-        isBiggerThan1000,
-        isContainerScrollBiggerThan2000,
-        height: container.current?.scrollHeight,
-    });
-
     if (!isContainerScrollBiggerThan2000) return null;
 
     const handleScroll = () => scrollTo(container.current!, pos);
