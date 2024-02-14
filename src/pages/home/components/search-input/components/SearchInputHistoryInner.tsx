@@ -26,15 +26,14 @@ export default function SearchInputHistoryInner({ setQuery }: Props) {
             zIndex="popover"
             borderRadius="4px"
             position="absolute"
-          
             sx={{
                 "::-webkit-scrollbar": {
                     display: "none",
                 },
             }}
         >
-            {map(history, (his) => (
-                <History history={his} setQuery={setQuery} />
+            {map(history, (his, idx) => (
+                <History key={idx} history={his} setQuery={setQuery} />
             ))}
         </Box>
     );

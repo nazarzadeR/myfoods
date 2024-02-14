@@ -1,12 +1,12 @@
 import { useRef, useEffect } from "react";
 import { useNavigate, NavigateOptions, To } from "react-router-dom";
 
-type Props = TProps<{
+type Props = {
     wait?: number;
     where?: To | any;
     instant?: boolean;
     options?: NavigateOptions;
-}>;
+};
 
 export default function useRedirect({
     wait = 5,

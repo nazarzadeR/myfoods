@@ -18,13 +18,14 @@ export default function RecipeDetailModalInner({
     const { hasUser } = useAuth();
     const [hasError, setError] = useState(false);
 
-
-    const imageUrl = hasError ? "/images/fallback_recipe_image.jfif" : recipe.image
+    const imageUrl = hasError
+        ? "/images/fallback_recipe_image.jfif"
+        : recipe.image;
 
     const handleError = () => {
-        setError(() => true)
-    }
-      
+        setError(() => true);
+    };
+
     return (
         <VStack position="relative" bg="bgDark" borderRadius="md">
             {hasUser && !favoriteCard && <QuickAddFavorite recipe={recipe} />}

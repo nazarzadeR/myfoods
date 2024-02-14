@@ -1,3 +1,4 @@
+import { filter } from "lodash";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
@@ -17,7 +18,12 @@ export const useSearchHistory = create(
         (set) => ({
             history: [],
             addHistory: (history) =>
-                set((prev) => ({ history: [...prev.history, history] })),
+                set((prev) => ({
+                    history: [
+                        ...filter(prev.history, (p) => p !== history),
+                        history,
+                    ],
+                })),
             deleteHistory: (history) =>
                 set((prev) => ({
                     history: [...prev.history.filter((his) => his !== history)],

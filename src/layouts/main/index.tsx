@@ -1,8 +1,11 @@
 import { useRef } from "react";
+
 import { motion, Variants } from "framer-motion";
 import { HStack, Box, StackProps } from "@chakra-ui/react";
 
 import { useUtil } from "@/store";
+import ScrollTo from "./components/ScrollHandler";
+import { useScroll } from "@/hooks";
 
 // @ts-ignore
 const AnimatedMain = motion(HStack);
@@ -12,7 +15,9 @@ export default function MainLayout({
     ...rest
 }: TDetailedProps<{}, StackProps>) {
     const { isNavbarOpen } = useUtil();
-    const ref = useRef<HTMLDivElement>(null);
+    const ref = useRef<HTMLElement>(null);
+
+    const { scrollY } = useScroll(ref);
 
     return (
         <Box
@@ -21,6 +26,7 @@ export default function MainLayout({
             mx="auto"
             as={motion.div}
             overflow="hidden"
+            position="relative"
             bgColor="chakra-body-bg"
             transformOrigin="top left"
             variants={mobileNavbarVariants}
@@ -41,6 +47,8 @@ export default function MainLayout({
                 {...rest}
             >
                 {children && children}
+
+                <ScrollTo container={ref} scroll={scrollY} />
             </AnimatedMain>
         </Box>
     );

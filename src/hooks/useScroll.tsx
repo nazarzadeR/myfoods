@@ -3,12 +3,12 @@ import { useEffect, useState } from "react";
 import { on, off } from "@/util";
 import { useDebouncedCallback } from "use-debounce";
 
-const useScroll = (ref: React.MutableRefObject<any>) => {
-    const container = ref?.current as HTMLElement;
+export default function useScroll(ref: React.RefObject<HTMLElement>) {
+    const container = ref?.current;
     const [scrollY, setScrollY] = useState(0);
     const callback = useDebouncedCallback(() => {
-        setScrollY(container.scrollTop);
-    }, 400);
+        if (container) setScrollY(container.scrollTop);
+    }, 500);
 
     useEffect(() => {
         if (container) on(container, "scroll", callback);
@@ -21,6 +21,4 @@ const useScroll = (ref: React.MutableRefObject<any>) => {
     return {
         scrollY,
     };
-};
-
-export default useScroll;
+}
