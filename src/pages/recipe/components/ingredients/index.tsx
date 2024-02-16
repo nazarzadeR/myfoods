@@ -14,6 +14,10 @@ export default function Ingredients() {
             maxW="500px"
             justifyItems="center"
             alignContent="center"
+            minW={{
+                base: "310px",
+                sm: "420px",
+            }}
         >
             {ingredients.map((ing, idx) => (
                 <Ingredient key={idx} ingredient={ing} />

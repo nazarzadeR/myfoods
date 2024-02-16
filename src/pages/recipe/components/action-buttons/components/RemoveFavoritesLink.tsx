@@ -1,25 +1,27 @@
 import { useNavigate } from "react-router";
+import { Spinner } from "@chakra-ui/react";
 
 import ActionLink from "./ActionLink";
+import { useAuth } from "@/contexts";
 import { DeleteIcon } from "@/components";
 import useRemoveFavorites from "@/pages/recipe/hooks/useRemoveFavorites";
 import { useRecipeContext } from "@/pages/recipe/context/RecipeContext";
-import { Spinner } from "@chakra-ui/react";
 
 export default function RemoveFavoritesLink() {
+    const { hasUser } = useAuth();
     const navigate = useNavigate();
-    const { removeFavorites } = useRemoveFavorites();
     const { recipe, isFavorites } = useRecipeContext();
+    const { isLoading, mutateAsync } = useRemoveFavorites();
 
     const removeFromFavorites = async () => {
-        await removeFavorites.mutateAsync(recipe, {
+        await mutateAsync(recipe, {
             onSuccess() {
                 navigate("/favorites");
             },
         });
     };
 
-    if (!isFavorites) return null;
+    if (!isFavorites || !hasUser) return null;
 
     return (
         <ActionLink
@@ -31,11 +33,7 @@ export default function RemoveFavoritesLink() {
                 },
             }}
         >
-            {removeFavorites.isLoading ? (
-                <Spinner size="sm" />
-            ) : (
-                <DeleteIcon fontSize="xl" />
-            )}
+            {isLoading ? <Spinner size="sm" /> : <DeleteIcon fontSize="xl" />}
         </ActionLink>
     );
 }

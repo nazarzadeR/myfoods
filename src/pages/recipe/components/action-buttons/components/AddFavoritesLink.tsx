@@ -4,8 +4,10 @@ import ActionLink from "./ActionLink";
 import { FavoriteIcon } from "@/components";
 import useQuickAddFavorite from "@/pages/home/hooks/useQuickAddFavorite";
 import { useRecipeContext } from "@/pages/recipe/context/RecipeContext";
+import { useAuth } from "@/contexts";
 
 export default function AddFavoritesLink() {
+    const { hasUser } = useAuth();
     const { isLoading, mutateAsync } = useQuickAddFavorite();
     const { recipe, isFavorites, refetch } = useRecipeContext();
 
@@ -17,7 +19,7 @@ export default function AddFavoritesLink() {
         });
     };
 
-    if (isFavorites) return null;
+    if (isFavorites || !hasUser) return null;
 
     return (
         <ActionLink onClick={addFavorites}>

@@ -38,5 +38,5 @@ export default function useRemoveFavorites() {
         },
     );
 
-    return { removeFavorites };
+    return removeFavorites;
 }
