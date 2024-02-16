@@ -33,6 +33,12 @@ export default function Card({ recipe }: Props) {
                 h="full"
                 as={motion.div}
                 layoutId={`card-${recipe.label}`}
+                whileHover={{
+                    scale: 1.01,
+                    transition: {
+                        duration: 0.4,
+                    },
+                }}
             >
                 <Skeleton w="full" h="full" isLoaded={loaded}>
                     <Image

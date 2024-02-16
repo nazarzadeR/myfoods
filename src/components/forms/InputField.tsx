@@ -32,7 +32,7 @@ export default function InputField({
     ...props
 }: TProps) {
     const [show, { toggle }] = useBoolean(false);
-    const [field, meta] = useField(props as FieldHookConfig<any>);
+    const [field, meta] = useField(props as FieldHookConfig<unknown>);
 
     const onError = !!meta.touched && !!meta.error;
 

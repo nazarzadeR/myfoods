@@ -1,12 +1,12 @@
 import { VStack } from "@chakra-ui/react";
 
 import Ingredient from "./components/Ingredient";
+import { useRecipeContext } from "../../context/RecipeContext";
 
-type Props = TProps<{
-    ingredients: Recipe.TIngredient[];
-}>;
-
-export default function Ingredients({ ingredients }: Props) {
+export default function Ingredients() {
+    const {
+        recipe: { ingredients },
+    } = useRecipeContext();
     return (
         <VStack
             as="ul"

@@ -1,22 +1,21 @@
 import { get } from "lodash";
 import { useNavigate } from "react-router";
+import { HStack } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
-import { HStack, Spinner } from "@chakra-ui/react";
 
 import { useRecipeSettings } from "@/store";
 import ActionLink from "./components/ActionLink";
-import useRemoveFavorites from "../../hooks/useRemoveFavorites";
-import { HomeIcon, TagIcon, LinkIcon, DeleteIcon } from "@/components";
+import { HomeIcon, TagIcon, LinkIcon } from "@/components";
+import AddFavoritesLink from "./components/AddFavoritesLink";
+import RemoveFavoritesLink from "./components/RemoveFavoritesLink";
+import { useRecipeContext } from "@/pages/recipe/context/RecipeContext";
 
-type Props = TProps<{
-    recipe: Recipe.TRecipe;
-}>;
-
-export default function ActionLinks({ recipe }: Props) {
+export default function ActionLinks() {
     const { t } = useTranslation();
     const navigate = useNavigate();
     const { addTags } = useRecipeSettings();
-    const { removeFavorites } = useRemoveFavorites();
+
+    const { recipe } = useRecipeContext();
 
     const recipeTags = get(recipe, "tags");
     const recipeSiteLink = get(recipe, "url");
@@ -24,13 +23,6 @@ export default function ActionLinks({ recipe }: Props) {
     const backTo = () => navigate("/");
     const openPage = () => window.open(recipeSiteLink);
     const addTagsTo = () => recipeTags && addTags(...recipeTags);
-    const removeFromFavorites = async () => {
-        await removeFavorites.mutateAsync(recipe, {
-            onSuccess() {
-                navigate("/favorites");
-            },
-        });
-    };
 
     return (
         <HStack
@@ -51,28 +43,13 @@ export default function ActionLinks({ recipe }: Props) {
             >
                 <TagIcon fontSize="2xl" />
             </ActionLink>
-
             {recipeSiteLink && (
                 <ActionLink onClick={openPage}>
                     <LinkIcon fontSize="2xl" />
                 </ActionLink>
             )}
-
-            <ActionLink
-                onClick={removeFromFavorites}
-                _hover={{
-                    borderColor: "red.300",
-                    "& > *": {
-                        color: "red.300",
-                    },
-                }}
-            >
-                {removeFavorites.isLoading ? (
-                    <Spinner size="sm" />
-                ) : (
-                    <DeleteIcon fontSize="xl" />
-                )}
-            </ActionLink>
+            <AddFavoritesLink />
+            <RemoveFavoritesLink />
         </HStack>
     );
 }

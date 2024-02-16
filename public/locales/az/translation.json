@@ -288,7 +288,8 @@
     "success": {
         "EMAIL_CHANGED": "Email uğurla dəyişdirildi",
         "USERNAME_CHANGED": "İstifadəçi adı uğurla dəyişdirildi",
-        "ADDED_TO_FAVORITES": "Recept seçilənlərə əlavə edildi",
+        "ADDED_TO_FAVORITES": "Recept favoritlərə əlavə edildi",
+        "REMOVED_FROM_FAVORITES": "Recept favoritlərdən silindi",
         "RECIPE_ADDED_TO_CLOUD": "Cari quraşdırmalar buluta əlavə edildi",
         "PROFILE_PIC_UPLOAD_SUCCESSFULLY": "Profil şəkli uğurla yükləndi",
         "EMAILJS_EMAIL_SENDED": "Elektron məktub uğurla göndərildi, təşəkkürlər",

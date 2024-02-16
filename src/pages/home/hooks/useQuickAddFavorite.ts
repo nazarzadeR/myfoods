@@ -34,6 +34,8 @@ export default function useQuickAddFavorite(): TReturnType {
                 const errorType =
                     "response" in error ? error["response"] : error["request"];
 
+                console.log(error);
+
                 match(errorType.status)
                     .with(0, () => onError("CORS_ERROR"))
                     .otherwise(() => onError("SOMETHING_GONE_WRONG"));

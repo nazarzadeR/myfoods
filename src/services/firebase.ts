@@ -15,7 +15,7 @@ import {
     signInWithEmailAndPassword,
     createUserWithEmailAndPassword,
 } from "firebase/auth";
-import { isEmpty } from "lodash";
+import { isEmpty, isUndefined, some } from "lodash";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import {
     doc,
@@ -90,6 +90,19 @@ export async function addRecipeToFavoriteFirebase(
         },
         { merge: true },
     );
+}
+
+export async function checkRecipeIsFavorite(uid: string, label: string) {
+    try {
+        const favoriteSnap = await getDoc(doc(USERS_DATA_REF, uid));
+        const favorites = favoriteSnap.get("favorites");
+
+        if (isUndefined(favorites)) return false;
+
+        return some(favorites, ["label", label]);
+    } catch (error: any) {
+        throw error;
+    }
 }
 
 export async function removeRecipeToFavoriteFirebase(

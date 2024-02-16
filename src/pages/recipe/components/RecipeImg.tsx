@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { Image, Skeleton, VStack } from "@chakra-ui/react";
+import { useRecipeContext } from "../context/RecipeContext";
 
-type Props = TProps<{
-    image: string;
-}>;
-
-export default function RecipeImg({ image }: Props) {
+export default function RecipeImg() {
     const [loaded, setLoaded] = useState(false);
     const [hasError, setHasError] = useState(false);
+    const {
+        recipe: { image },
+    } = useRecipeContext();
 
     const url = hasError ? "/images/fallback_recipe_image.jfif" : image;
 
