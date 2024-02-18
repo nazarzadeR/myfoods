@@ -1,4 +1,4 @@
-import { VStack, Stack, Hide, Show } from "@chakra-ui/react";
+import { VStack } from "@chakra-ui/react";
 
 import ProfileLastSeen from "./components/LastSeen";
 import ProfilePicture from "./components/ProfilePicture";
