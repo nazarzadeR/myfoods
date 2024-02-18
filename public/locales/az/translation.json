@@ -151,6 +151,7 @@
         "calories": "$ ila * kcal arasında kalori",
         "needAuth": "Bu səhifə üçün giriş tələb olunur",
         "diet": "Hansı növ diet izləyirsiniz?",
+        "deleteAccount": "Hesabı sil",
         "userPicNeeded": "Bu üçün şəkil faylı lazımdır",
         "health": "Sağlamlığınıza nə üçün üstünlük verirsiniz?",
         "dish": "Sevdiyiniz xüsusi yeməklər var?",
@@ -241,7 +242,7 @@
             "reset": "Şifrəmi yenilə",
             "magic": "Sihirli keçid göndər"
         },
-        
+
         "link": {
             "magic": "Qayıda",
             "goLogin": "Girişə qayıt",
@@ -279,6 +280,7 @@
         "CORS_ERROR": "Cors problemi baş verdi",
         "INVALID_CREDENTIAL": "Məlumatlar yanlışdır",
         "SOMETHING_GONE_WRONG": "Naməlum səhv baş verdi",
+        "NEED_RESIGNED_IN": "Hesabınızı silmək üçün daxil olmalısınız, çox zaman müəyyən bir pəncərə açılır və şifrəni yenidən daxil etməyiniz istənilir, amma mən bu prosesi etmək üçün və ya yeni modal və ya popup yaratmağa marağım və həvəsim yoxdur. Əgər hesabınızı həqiqətən silmək niyyətindəsinizsə sadəcə çıxın və daxil olun, daxil olduktan sonra hesabı dərhal silin ദ്ദി ˉ͈̀꒳ˉ͈́ )✧",
         "EMAIL_IN_USE": "Email artıq istifadə olunur, başqa birini sınayın",
         "EMAIL_UPDATE_NEED_VERIFY": "Sizə göndərilən təsdiq linkini təsdiqləyin",
         "POPUP_CLOSED_BY_USER": "Əgər bunu sevmirsinizsə, başqa birini sınayın",
@@ -290,15 +292,16 @@
         "USERNAME_CHANGED": "İstifadəçi adı uğurla dəyişdirildi",
         "ADDED_TO_FAVORITES": "Recept favoritlərə əlavə edildi",
         "REMOVED_FROM_FAVORITES": "Recept favoritlərdən silindi",
+        "PROFILE_DELETED": "Profil uğurla silindiç ziyarət üçün təşşəkürlər („• ֊ •„)੭",
         "RECIPE_ADDED_TO_CLOUD": "Cari quraşdırmalar buluta əlavə edildi",
         "PROFILE_PIC_UPLOAD_SUCCESSFULLY": "Profil şəkli uğurla yükləndi",
         "EMAILJS_EMAIL_SENDED": "Elektron məktub uğurla göndərildi, təşəkkürlər",
-        "EMAIL_LINK_SENDED" : {
+        "EMAIL_LINK_SENDED": {
             "TOAST": "Email linkiniz email adresinə göndərildi. Zəhmət olmasa emailinizi yoxlayın",
             "TITLE": "Email linki göndərildi",
             "DESCRIPTION": "Email linki göndərildi, emailinizi yoxlayın və myfoods tərəfindən göndərilən linkə klikləyin. Əgər email almazsanız, xahiş edirəm bir daha göndərin və emailinizi iki dəfə yoxlayın."
         },
-        "RESET_PASS_SENDED" : {
+        "RESET_PASS_SENDED": {
             "TOAST": "Reset linkiniz email adresinə göndərildi. Zəhmət olmasa emailinizi yoxlayın",
             "TITLE": "Şifrəni yeniləmək üçün email göndərildi",
             "DESCRIPTION": "Reset emaili göndərildi, emailinizi yoxlayın və myfoods tərəfindən göndərilən linkə klikləyin. Əgər email almazsanız, xahiş edirəm bir daha göndərin və emailinizi iki dəfə yoxlayın."

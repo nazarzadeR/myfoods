@@ -6,6 +6,7 @@ declare namespace Api {
         | "auth/operation-not-allowed"
         | "auth/email-already-in-use"
         | "auth/popup-closed-by-user"
+        | "auth/requires-recent-login"
         | "auth/credential-already-in-use"
         | "account-exists-with-different-credential";
 

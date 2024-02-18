@@ -1,6 +1,6 @@
 import { get } from "lodash";
 import { useState } from "react";
-import { Box, Image, Skeleton } from "@chakra-ui/react";
+import { Center, Image, Skeleton } from "@chakra-ui/react";
 
 import { useAuth } from "@/contexts";
 
@@ -21,24 +21,25 @@ export default function ProfilePicture() {
     };
 
     return (
-        <Skeleton
-            maxW="320px"
+        <Center
+            w="full"
             maxH="300px"
+            boxSize="full"
             borderRadius="md"
             position="relative"
-            isLoaded={isLoaded}
-            boxSize={{ base: "full", sm: "140" }}
         >
-            <Box
-                maxW="320px"
+            <Skeleton
+                maxW="420px"
                 maxH="300px"
+                boxSize="full"
                 borderRadius="md"
                 position="relative"
-                boxSize={{ base: "full", sm: "140" }}
+                isLoaded={isLoaded}
             >
                 <Image
                     w="full"
                     h="full"
+                    maxW="420px"
                     maxH="260px"
                     src={imageSrc}
                     borderRadius="md"
@@ -47,7 +48,7 @@ export default function ProfilePicture() {
                     onLoadStart={onHandleLoadStart}
                     onLoadCapture={onHandleLoadStart}
                 />
-            </Box>
-        </Skeleton>
+            </Skeleton>
+        </Center>
     );
 }

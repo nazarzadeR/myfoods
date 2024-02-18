@@ -1,12 +1,12 @@
 import { useFormik } from "formik";
 import { useTranslation } from "react-i18next";
 import {
-    Box,
     Stack,
     Input,
     InputGroup,
     FormControl,
     FormErrorMessage,
+    Center,
 } from "@chakra-ui/react";
 
 import { ButtonField } from "@/components";
@@ -29,9 +29,10 @@ export default function ProfilePictureChangeInput() {
         formik.setFieldValue("userPicture", e.target.files[0]);
 
     return (
-        <Box w="full">
+        <Center w="full">
             <Stack
                 as="form"
+                maxW="380px"
                 onSubmit={formik.handleSubmit as any}
                 flexDir={{
                     base: "column",
@@ -60,6 +61,6 @@ export default function ProfilePictureChangeInput() {
                     {t("words.upload")}
                 </ButtonField>
             </Stack>
-        </Box>
+        </Center>
     );
 }

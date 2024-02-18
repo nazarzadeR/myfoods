@@ -8,39 +8,30 @@ import ProfilePicChangeInput from "./components/ProfilePictureChangeInput";
 
 export default function ProfileHeader() {
     return (
-        <VStack w="full">
-            <Stack
+        <VStack h="full" w="full">
+            <VStack
                 w="full"
                 justifyContent="space-around"
                 alignItems={{
                     base: "center",
                     md: "initial",
                 }}
-                flexDir={{
-                    base: "column",
-                    sm: "row",
-                }}
             >
                 <ProfilePicture />
                 <VStack
+                    w="full"
                     h="full"
-                    w={{
-                        base: "full",
-                        sm: "auto",
-                    }}
-                    justifyContent="space-between"
+                    mx="auto"
+                    maxW="380px"
                     alignItems="center"
+                    justifyContent="center"
                 >
-                    <Show below="sm">
-                        <ProfileLastSeen />
-                    </Show>
+                    <ProfileLastSeen />
+
                     <ChangeUsernameInput />
                     <ChangeEmailInput />
-                    <Hide below="sm">
-                        <ProfileLastSeen />
-                    </Hide>
                 </VStack>
-            </Stack>
+            </VStack>
             <ProfilePicChangeInput />
         </VStack>
     );

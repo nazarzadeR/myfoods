@@ -145,6 +145,7 @@
     "expressions": {
         "tagList": "Enter tags here",
         "lastSeenDate": "last login $",
+        "deleteAccount": "Delete account",
         "noTags": "No tags for this recipes",
         "backToLogin": "Back to login page",
         "saveRecipeSetting": "Save to cloud",
@@ -223,7 +224,7 @@
     "home": {
         "nothingSearched": "You have not been searching yet."
     },
-     "sign": {
+    "sign": {
         "head": {
             "login": "Welcome",
             "register": "Greeting",
@@ -251,7 +252,7 @@
             "reset": "Reset my password",
             "magic": "Send magic link"
         },
-        
+
         "link": {
             "magic": "Return to",
             "goLogin": "Back to",
@@ -289,6 +290,7 @@
         "CORS_ERROR": "Cors problem occurred",
         "INVALID_CREDENTIAL": "Credential is invalid",
         "SOMETHING_GONE_WRONG": "Unknown error occurred",
+        "NEED_RESIGNED_IN": "You need to resign in, most commonly the pop up shows and say you re-enter password but i tired up and no more interest to create new modal or popup, If you really want to delete the account just sign-out and sign-in and delete account immediately after sign-in ദ്ദി ˉ͈̀꒳ˉ͈́ )✧",
         "EMAIL_IN_USE": "Email already in use, try another one",
         "EMAIL_UPDATE_NEED_VERIFY": "Verify link which sended to you",
         "POPUP_CLOSED_BY_USER": "If you do not like it, try another one",
@@ -297,22 +299,22 @@
     },
     "success": {
         "EMAIL_CHANGED": "Email changed successfully",
-        "USERNAME_CHANGED": "Username changed successfully",
         "ADDED_TO_FAVORITES": "Recipe added to favorites",
+        "USERNAME_CHANGED": "Username changed successfully",
+        "PROFILE_DELETED": "Profile deleted successfully bye („• ֊ •„)੭",
         "REMOVED_FROM_FAVORITES": "Recipe removed from favorites",
         "RECIPE_ADDED_TO_CLOUD": "Current settings added to cloud",
         "PROFILE_PIC_UPLOAD_SUCCESSFULLY": "Profile picture uploaded",
         "EMAILJS_EMAIL_SENDED": "Email sended successfully, thanks",
-        "EMAIL_LINK_SENDED" : {
+        "EMAIL_LINK_SENDED": {
             "TOAST": "Email link send your email. Check your email, please",
             "TITLE": "Email link sended",
             "DESCRIPTION": "Email link sent, look at your email, and click the link sent by myfoods. If you do not receive an email, please resend and check your email twice."
         },
-        "RESET_PASS_SENDED" : {
+        "RESET_PASS_SENDED": {
             "TOAST": "Reset link send your email. Check your email, please",
             "TITLE": "Reset email sended",
             "DESCRIPTION": "Reset email sent, look at your email, and click the link sent by myfoods. If you do not receive an email, please resend and check your email twice."
         }
-        
     }
 }

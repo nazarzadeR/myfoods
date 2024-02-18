@@ -1,6 +1,7 @@
 import {
     User,
     signOut,
+    deleteUser,
     updateEmail,
     updateProfile,
     signInWithPopup,
@@ -13,6 +14,7 @@ import {
     isSignInWithEmailLink,
     sendPasswordResetEmail,
     signInWithEmailAndPassword,
+    reauthenticateWithCredential,
     createUserWithEmailAndPassword,
 } from "firebase/auth";
 import { isEmpty, isUndefined, some } from "lodash";
@@ -77,6 +79,10 @@ export function confirmPassword(oobCode: string, password: string) {
     }
 
     return confirmPasswordReset(auth, oobCode, password);
+}
+
+export async function permanentDeleteUser(user: User) {
+    return user.delete();
 }
 
 export async function addRecipeToFavoriteFirebase(

@@ -36,6 +36,7 @@ export default function ChangeEmailInput() {
                     <Form>
                         <HStack>
                             <InputField
+                                noRight
                                 type="email"
                                 id="email"
                                 name="email"

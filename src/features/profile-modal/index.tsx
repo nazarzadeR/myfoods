@@ -33,6 +33,8 @@ export default function RecipesSettingModal(props: Props) {
         >
             <ModalOverlay />
             <ModalContent
+                overflowY="scroll"
+                sx={modalContentSX}
                 bg={{
                     base: "chakra-body-bg",
                     sm: "chakra-subtle-bg",
@@ -44,10 +46,20 @@ export default function RecipesSettingModal(props: Props) {
                         {t("words.profile")}
                     </Center>
                 </ModalHeader>
-                <ModalBody>
+                <ModalBody
+                    minH={{
+                        base: "full",
+                    }}
+                >
                     <ProfileModalInner />
                 </ModalBody>
             </ModalContent>
         </Modal>
     );
 }
+
+const modalContentSX = {
+    "::-webkit-scrollbar": {
+        display: "none",
+    },
+};

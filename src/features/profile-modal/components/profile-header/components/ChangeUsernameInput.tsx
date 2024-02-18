@@ -36,6 +36,7 @@ export default function ChangeUsernameInput() {
                     <Form>
                         <HStack>
                             <InputField
+                                noRight
                                 type="text"
                                 id="username"
                                 name="username"
